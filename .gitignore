@@ -1,5 +1,7 @@
 # Secretos
 .env
+*key*.txt
+*.key
 
 # Dependencias y artefactos
 node_modules/
