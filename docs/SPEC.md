@@ -170,13 +170,15 @@ La evaluación tiene dos etapas: filtros duros que descartan, y una puntuación 
 | Señal | Peso |
 |---|---|
 | Rol de automatización, integración o workflows (n8n, Zapier, Make, APIs) | +30 |
-| Stack full-stack que coincide (JavaScript/TypeScript, Node, Python, SQL) | +20 |
+| Rol full-stack, backend o frontend (por título) | +30 |
+| Stack que coincide (JavaScript/TypeScript, Node, NestJS, React, Python, SQL, Docker) | +20 |
 | Componente de IA o LLM aplicado | +15 |
 | Nivel junior, trainee o semi-senior | +15 |
 | Pago publicado y ≥ $12/hora | +10 |
 | Publicada hace 3 días o menos | +10 |
-| Requisito central de AWS o Azure | −20 |
 | Nivel senior, lead o 5+ años exigidos | −25 |
+
+> **Cambio del 2026-10-21:** se quitó la penalización de −20 por AWS/Azure y se agregó la señal de rol full-stack. Un solo perfil cubre los dos CV de Alessandro (automatización y full-stack); el resumen indica qué CV enviar según qué señal de rol coincidió.
 
 El resultado se recorta entre 0 y 100. La justificación lista las señales que sumaron y restaron, por ejemplo: "+30 automatización, +20 Node, −20 AWS requerido".
 
