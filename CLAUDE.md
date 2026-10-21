@@ -40,3 +40,6 @@ El objetivo no es solo terminar el proyecto: Alessandro debe ganar experiencia r
 - Esquema: migraciones nuevas en `db/migrations/NNN_*.sql`, nunca editar las aplicadas. Config de fuentes/perfiles en `db/seed/` (upserts, fuente de verdad). Ver ADR 0003.
 - Valores internos en inglés (`type`, `period`, `runs.status`); `matches.status` en español porque se edita a mano.
 - El resumen siempre enlaza la oferta original y nombra la fuente (términos de las fuentes, ADR 0002).
+- Conectores `source-*`: nunca lanzan excepciones; siempre devuelven un ítem `{source_id, fetched, normalized, error, opportunities}`. Sub-workflows deben estar publicados (n8n 2.x). main-daily los llama por `sources.connector_workflow_id`. Ver ADR 0005.
+- Probar comportamiento de n8n con workflows desechables vía CLI (`n8n import:workflow` + `N8N_RUNNERS_BROKER_PORT=5690 n8n execute --id=...`) y borrarlos después (unpublish, luego borrar `workflow_published_version` y `workflow_entity`).
+- Hallazgos de datos reales en `docs/hallazgos.md`; respuestas de fuentes cacheadas en `.cache/sources/` (`npm run fixtures`).

@@ -31,3 +31,4 @@ Se usan **las tres fuentes** en la v1 (la SPEC pide 2 o 3; tener tres da margen 
 - El uso es personal (un perfil que recibe un resumen privado), compatible con los términos de las tres.
 - **Riesgo para la expansión:** un canal público o comunitario que reenvíe estas ofertas podría chocar con "no enviar a terceros" (Remotive) y con "no competir" (We Work Remotely). Quedó anotado en `docs/ideas.md` para revisarlo antes de esa expansión.
 - Remotive llega con 24 h de retraso, lo que afecta la señal "publicada hace ≤ 3 días" de la puntuación. Se revisa en la fase 2.
+- **Actualización 2026-10-21:** la API pública de Remotive devuelve solo las 10 ofertas más recientes e ignora el parámetro `limit`. Sigue en la v1 porque no cuesta nada, pero el volumen viene sobre todo de Remote OK y We Work Remotely. Ver [hallazgos](../hallazgos.md).

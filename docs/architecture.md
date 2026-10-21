@@ -35,8 +35,17 @@ cron ─▶ main-daily
 
 | Módulo | Entrada | Salida |
 |---|---|---|
-| `source-*` | fila de `sources` | lista de ofertas en el esquema de `opportunities` (sin `id`) |
+| `source-*` | fila de `sources` (`id`, `url`, …) | **siempre** un ítem `{ source_id, fetched, normalized, error, opportunities[] }`; nunca lanza excepciones |
 | `evaluate` | ids de ofertas nuevas | filas en `matches` |
 | `notify-*` | perfil + lista de ofertas | mensaje enviado y `matches.notified_at` marcado |
 
-La lógica pura que usan estos módulos está en `lib/` y se carga en los Code nodes con `require('/opt/radar/lib/index.js')` ([ADR 0001](decisions/0001-compartir-lib-con-n8n.md)).
+- `main-daily` llama a cada conector por `sources.connector_workflow_id` ([ADR 0005](decisions/0005-conectores-y-main-daily.md)). Los conectores deben estar **publicados**.
+- La lógica pura que usan estos módulos está en `lib/` y se carga en los Code nodes con `require('/opt/radar/lib/index.js')` ([ADR 0001](decisions/0001-compartir-lib-con-n8n.md)).
+
+## Funciones SQL (base `radar`)
+
+| Función | Uso |
+|---|---|
+| `start_run()` | Abre una ejecución en `runs` y devuelve su id |
+| `upsert_opportunities(jsonb)` | Inserta ofertas nuevas y suma fuentes a las existentes; devuelve `(id, fingerprint, is_new)` |
+| `finish_run(id, stats, error)` | Cierra la ejecución con estado `success`, `partial` o `failed` |

@@ -31,6 +31,9 @@ docker compose up -d
 | `npm run db:psql` | Consola SQL sobre la base `radar` |
 | `npm run db:backup` | Respaldar las bases `radar` y `n8n` en `backups/` |
 | `npm run db:restore -- backups/<archivo>.dump` | Restaurar un respaldo |
+| `npm run fixtures` | Descargar una muestra de cada fuente (caché local + muestras de prueba) |
+| `npm run workflows:export` | Exportar los workflows de n8n a `workflows/` |
+| `npm run workflows:import` | Importar `workflows/` a n8n y publicar los conectores |
 
 > `docker compose down -v` borra los volúmenes, es decir, **todos los datos**. Respalda antes.
 
