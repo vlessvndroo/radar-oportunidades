@@ -1,0 +1,22 @@
+# Secretos
+.env
+
+# Dependencias y artefactos
+node_modules/
+coverage/
+
+# Respaldos locales de la base de datos
+backups/*
+!backups/.gitkeep
+
+# Caché de respuestas de fuentes en desarrollo
+.cache/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Original de la especificación (la versión de trabajo es docs/SPEC.md)
+*.pdf
