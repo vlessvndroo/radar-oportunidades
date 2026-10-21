@@ -16,7 +16,7 @@ La SPEC propone tres candidatas (Remotive, RemoteOK y We Work Remotely) y pide v
 | Remote OK | `GET https://remoteok.com/api` | Sí (200) | El primer elemento del JSON es el aviso legal: enlazar a la URL de Remote OK (enlace *follow*) y mencionarlo como fuente; no usar su logo sin permiso. |
 | We Work Remotely | `GET https://weworkremotely.com/remote-jobs.rss` | Sí (200) | Su página de RSS permite el uso a cualquiera siempre que se atribuyan los enlaces a We Work Remotely. Sus términos de API prohíben construir un servicio que compita con ellos. [Página del RSS](https://weworkremotely.com/remote-job-rss-feed) |
 
-**Limitación de la verificación:** las páginas de We Work Remotely bloquean el acceso automatizado (HTTP 403), así que sus términos se confirmaron con el resultado de búsqueda de la página oficial del RSS y no leyendo el texto completo. Alessandro debería abrir la página en el navegador una vez para confirmarlo.
+**Nota sobre We Work Remotely:** su sitio responde 403 a clientes HTTP simples, así que la página del RSS se leyó con un navegador real (2026-10-20). Dice que cualquiera puede usar el feed y solo pide atribuir los enlaces a We Work Remotely. El feed en sí (`remote-jobs.rss`) sí responde 200 con nuestro `User-Agent`.
 
 ## Decisión
 
