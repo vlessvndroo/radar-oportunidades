@@ -1,0 +1,78 @@
+name: radar
+
+services:
+  postgres:
+    image: postgres:17.11-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${N8N_DB_NAME}
+      RADAR_DB_NAME: ${RADAR_DB_NAME}
+      TZ: ${TZ}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Solo corre la primera vez (volumen vacío): crea la base del radar.
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+      - ./backups:/backups
+    ports:
+      # Solo accesible desde esta computadora (para clientes como DBeaver).
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Tarea de una sola vez: aplica migraciones pendientes y recarga el seed.
+  migrate:
+    image: postgres:17.11-alpine
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGHOST: postgres
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${RADAR_DB_NAME}
+      PGOPTIONS: "-c client_min_messages=warning"
+    volumes:
+      - ./db:/db:ro
+      - ./scripts/migrate.sh:/migrate.sh:ro
+    entrypoint: ["sh", "/migrate.sh"]
+
+  n8n:
+    image: n8nio/n8n:2.44.4
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: ${N8N_DB_NAME}
+      DB_POSTGRESDB_USER: ${POSTGRES_USER}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD}
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY}
+      GENERIC_TIMEZONE: ${TZ}
+      TZ: ${TZ}
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      # Los conectores leen SOURCE_USER_AGENT con $env.
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: "false"
+      SOURCE_USER_AGENT: ${SOURCE_USER_AGENT}
+      # Los Code nodes cargan la lógica pura con require('/opt/radar/lib/index.js').
+      # Solo se habilita esa ruta exacta (docs/decisions/0001-compartir-lib-con-n8n.md).
+      NODE_FUNCTION_ALLOW_EXTERNAL: /opt/radar/lib/index.js
+    ports:
+      - "127.0.0.1:${N8N_PORT:-5678}:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./lib:/opt/radar/lib:ro
+
+volumes:
+  pgdata:
+  n8n_data:
