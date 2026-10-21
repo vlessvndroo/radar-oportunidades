@@ -15,6 +15,9 @@
     "db:migrate": "docker compose run --rm migrate",
     "db:psql": "docker compose exec postgres sh -c \"psql -U $POSTGRES_USER -d $RADAR_DB_NAME\"",
     "db:backup": "node scripts/backup.mjs",
-    "db:restore": "node scripts/restore.mjs"
+    "db:restore": "node scripts/restore.mjs",
+    "fixtures": "node scripts/fetch-fixtures.mjs",
+    "workflows:export": "node scripts/export-workflows.mjs",
+    "workflows:import": "node scripts/import-workflows.mjs"
   }
 }
