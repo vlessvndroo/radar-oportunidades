@@ -35,3 +35,15 @@ ON CONFLICT (id) DO UPDATE SET
   notes            = EXCLUDED.notes,
   connector_workflow_id = COALESCE(EXCLUDED.connector_workflow_id, sources.connector_workflow_id),
   updated_at       = now();
+
+-- Ids de los workflows conectores en n8n (estables: se conservan al exportar
+-- e importar los workflows con scripts/export-workflows y import-workflows).
+UPDATE sources AS s
+SET connector_workflow_id = c.workflow_id
+FROM (VALUES
+  ('remotive', 'QmJeaSLYsa36A7Gj'),
+  ('remoteok', 'KuISAae0S7S12bfq'),
+  ('weworkremotely', '1OEDQf29tlLnJmJc'),
+  ('getonboard', 'zB0hs2T2FDtc84WG')
+) AS c (source_id, workflow_id)
+WHERE s.id = c.source_id;
