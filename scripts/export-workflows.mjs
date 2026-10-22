@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const CONTAINER_DIR = '/tmp/radar-export';
-const VOLATILE_KEYS = ['pinData', 'createdAt', 'updatedAt', 'shared', 'triggerCount', 'activeVersion'];
+const VOLATILE_KEYS = ['pinData', 'createdAt', 'updatedAt', 'shared', 'triggerCount', 'activeVersion', 'versionCounter'];
 
 const compose = (...args) => execFileSync('docker', ['compose', ...args], { encoding: 'utf8' });
 

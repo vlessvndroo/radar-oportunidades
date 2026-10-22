@@ -1,0 +1,237 @@
+{
+  "id": "9Pfc9IyRc47067NC",
+  "name": "main-daily",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "66a8025b-7a7f-49c0-ac24-d9968309a7d1",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, url, connector_workflow_id\nFROM sources\nWHERE enabled AND connector_workflow_id IS NOT NULL\nORDER BY id;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.7,
+      "position": [
+        448,
+        0
+      ],
+      "id": "0d00dd19-b35d-4e5b-8419-b1cbb3380732",
+      "name": "Fuentes activas",
+      "credentials": {
+        "postgres": {
+          "id": "48jLJ7Ji7emLh8pt",
+          "name": "Radar DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT start_run() AS run_id;",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "a9ed24d0-53fe-4eee-beb5-a2316f2bc922",
+      "name": "Iniciar run",
+      "credentials": {
+        "postgres": {
+          "id": "48jLJ7Ji7emLh8pt",
+          "name": "Radar DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.connector_workflow_id }}",
+          "cachedResultName": "={{ $json.connector_workflow_id }}"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.4,
+      "position": [
+        672,
+        0
+      ],
+      "id": "d056cbdc-d1d5-4de5-98cb-0684a07a9400",
+      "name": "Ejecutar conector",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const runId = $('Iniciar run').first().json.run_id;\nconst expected = $('Fuentes activas').all().map((item) => item.json.id);\n\nconst sources = {};\nconst opportunities = [];\n\n// Cada resultado se identifica por su source_id, nunca por su posición.\nfor (const { json: result } of $input.all()) {\n  if (!result.source_id) continue;\n  sources[result.source_id] = {\n    fetched: result.fetched ?? 0,\n    normalized: result.normalized ?? 0,\n    error: result.error ?? null,\n  };\n  opportunities.push(...(result.opportunities ?? []));\n}\n\n// Una fuente sin resultado (conector sin publicar, caído, etc.) queda con error.\nfor (const id of expected) {\n  sources[id] ??= { fetched: 0, normalized: 0, error: 'el conector no devolvió resultado' };\n}\n\nreturn [{ json: { run_id: runId, sources, opportunities } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        0
+      ],
+      "id": "8d54f025-511d-4ac8-a233-739d30ff3915",
+      "name": "Preparar lote"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT count(*) FILTER (WHERE is_new)::int     AS new,\n       count(*) FILTER (WHERE NOT is_new)::int AS existing\nFROM upsert_opportunities($1::jsonb);",
+        "options": {
+          "queryReplacement": "={{ [JSON.stringify($json.opportunities)] }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.7,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "d7e8944e-a014-4465-a84d-7c59a82375e7",
+      "name": "Guardar ofertas",
+      "credentials": {
+        "postgres": {
+          "id": "48jLJ7Ji7emLh8pt",
+          "name": "Radar DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, status, stats FROM finish_run($1::bigint, $2::jsonb);",
+        "options": {
+          "queryReplacement": "={{ [ $('Preparar lote').first().json.run_id, JSON.stringify({ sources: $('Preparar lote').first().json.sources, new: $json.new, existing: $json.existing }) ] }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.7,
+      "position": [
+        1344,
+        0
+      ],
+      "id": "2bbdcc57-bec1-4854-aea7-0cc2dfa8e15a",
+      "name": "Cerrar run",
+      "credentials": {
+        "postgres": {
+          "id": "48jLJ7Ji7emLh8pt",
+          "name": "Radar DB"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Iniciar run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Iniciar run": {
+      "main": [
+        [
+          {
+            "node": "Fuentes activas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fuentes activas": {
+      "main": [
+        [
+          {
+            "node": "Ejecutar conector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ejecutar conector": {
+      "main": [
+        [
+          {
+            "node": "Preparar lote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar lote": {
+      "main": [
+        [
+          {
+            "node": "Guardar ofertas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar ofertas": {
+      "main": [
+        [
+          {
+            "node": "Cerrar run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "versionId": "989c9fa5-5f44-429c-97a5-10ebbc199723",
+  "activeVersionId": null,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

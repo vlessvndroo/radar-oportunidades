@@ -1,0 +1,107 @@
+{
+  "id": "KuISAae0S7S12bfq",
+  "name": "source-remoteok",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3160d556-3251-4dd8-b642-c81c9b1a6e22",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "={{ $env.SOURCE_USER_AGENT }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "body"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "a26c7a77-5781-490d-8ad7-fd28865bf326",
+      "name": "Descargar",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const { parseRemoteOk, normalizeAll } = require('/opt/radar/lib/index.js');\n\nconst source = $('When Executed by Another Workflow').first().json;\nconst response = $input.first().json;\n\ntry {\n  if (response.error) {\n    throw new Error(response.error.message ?? JSON.stringify(response.error));\n  }\n  const candidates = parseRemoteOk(response.body);\n  const opportunities = normalizeAll(candidates, source.id);\n  return [{ json: {\n    source_id: source.id,\n    fetched: candidates.length,\n    normalized: opportunities.length,\n    error: null,\n    opportunities,\n  } }];\n} catch (err) {\n  return [{ json: {\n    source_id: source.id, fetched: 0, normalized: 0, error: err.message, opportunities: [],\n  } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "31947099-b986-4d6c-a53a-9c25351b3aeb",
+      "name": "Normalizar"
+    }
+  ],
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Descargar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar": {
+      "main": [
+        [
+          {
+            "node": "Normalizar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": null,
+  "nodeGroups": [],
+  "versionId": "2b562117-bfe3-4a9f-8489-fc3a70c09e2a",
+  "activeVersionId": "2b562117-bfe3-4a9f-8489-fc3a70c09e2a",
+  "sourceWorkflowId": null,
+  "tags": [],
+  "versionMetadata": {
+    "name": "v1 - conector Remote OK",
+    "description": ""
+  }
+}

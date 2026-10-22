@@ -1,0 +1,107 @@
+{
+  "id": "QmJeaSLYsa36A7Gj",
+  "name": "source-remotive",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c2c0b74e-f50d-4280-b1bb-ec545a84cc01",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "={{ $env.SOURCE_USER_AGENT }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text",
+              "outputPropertyName": "body"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "4e392b1d-b537-42d2-b2fc-f76a9036baba",
+      "name": "Descargar",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const { parseRemotive, normalizeAll } = require('/opt/radar/lib/index.js');\n\nconst source = $('When Executed by Another Workflow').first().json;\nconst response = $input.first().json;\n\ntry {\n  if (response.error) {\n    throw new Error(response.error.message ?? JSON.stringify(response.error));\n  }\n  const candidates = parseRemotive(response.body);\n  const opportunities = normalizeAll(candidates, source.id);\n  return [{ json: {\n    source_id: source.id,\n    fetched: candidates.length,\n    normalized: opportunities.length,\n    error: null,\n    opportunities,\n  } }];\n} catch (err) {\n  return [{ json: {\n    source_id: source.id, fetched: 0, normalized: 0, error: err.message, opportunities: [],\n  } }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "680e13ab-09b1-49a1-b729-8abcf57f33ea",
+      "name": "Normalizar"
+    }
+  ],
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Descargar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Descargar": {
+      "main": [
+        [
+          {
+            "node": "Normalizar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": null,
+  "nodeGroups": [],
+  "versionId": "04b7e1c3-ab9b-4e92-924b-e0ec74ff51aa",
+  "activeVersionId": "04b7e1c3-ab9b-4e92-924b-e0ec74ff51aa",
+  "sourceWorkflowId": null,
+  "tags": [],
+  "versionMetadata": {
+    "name": "v1 - conector Remotive",
+    "description": ""
+  }
+}
