@@ -2,6 +2,16 @@
 
 Mediciones con datos reales que condicionan las fases siguientes. Cada entrada indica la fecha y qué fase la usa.
 
+## 2026-10-22 — Aceptación de la fase 1 (main-daily en n8n)
+
+| Ejecución | Estado | Nuevas | Existentes | Nota |
+|---|---|---|---|---|
+| 1 | success | 318 | 0 | 4 fuentes: 119 + 99 + 10 + 92 = 320 → 318 (2 repetidas entre Remotive y Remote OK) |
+| 2 | success | 0 | 318 | Repetir no duplica |
+| 3 | partial | 0 | 221 | Remote OK apuntada a un host inexistente: error registrado, las otras 3 siguieron |
+
+- Una ejecución completa tarda ~4 s (la SPEC pide menos de 5 minutos); la que tiene una fuente caída suma ~15 s por los reintentos.
+
 ## 2026-10-21 — Primera recolección (fase 1, para la fase 2)
 
 Muestra: una consulta a cada fuente → Remotive 10, Remote OK 99, We Work Remotely 92 (91 únicas) = 198 ofertas tras deduplicar.
