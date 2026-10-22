@@ -1,6 +1,6 @@
 # Guía fase 1: construir los workflows de recolección
 
-Vas a construir 4 workflows en n8n (<http://localhost:5678>): tres **conectores**, uno por fuente, y el workflow principal **main-daily**. El diseño y sus motivos están en el [ADR 0005](../decisions/0005-conectores-y-main-daily.md).
+Vas a construir 5 workflows en n8n (<http://localhost:5678>): cuatro **conectores**, uno por fuente, y el workflow principal **main-daily**. El diseño y sus motivos están en el [ADR 0005](../decisions/0005-conectores-y-main-daily.md).
 
 ```
 main-daily
@@ -10,7 +10,8 @@ main-daily
   → Ejecutar conector     (Execute Workflow, una vez por fuente, por id)
         ├─ source-remotive        HTTP → Normalizar
         ├─ source-remoteok        HTTP → Normalizar
-        └─ source-weworkremotely  HTTP → Normalizar
+        ├─ source-weworkremotely  HTTP → Normalizar
+        └─ source-getonboard      HTTP → Normalizar
   → Preparar lote         (Code: junta resultados por source_id)
   → Guardar ofertas       (Postgres: upsert_opportunities)
   → Cerrar run            (Postgres: finish_run)
@@ -125,22 +126,25 @@ Anota el **id** del workflow: es la parte final de la URL, `localhost:5678/workf
 
 ---
 
-## Paso 2 — Conectores `source-remoteok` y `source-weworkremotely`
+## Paso 2 — Conectores `source-remoteok`, `source-weworkremotely` y `source-getonboard`
 
-Duplica `source-remotive` (menú **⋯ → Duplicate**) dos veces y cambia solo esto:
+Duplica `source-remotive` (menú **⋯ → Duplicate**) tres veces y cambia solo esto:
 
 | Workflow | Línea del `require` y llamada al parser | Datos de prueba del trigger |
 |---|---|---|
 | `source-remoteok` | `const { parseRemoteOk, normalizeAll } = …` y `parseRemoteOk(response.body)` | `[{ "id": "remoteok", "url": "https://remoteok.com/api" }]` |
 | `source-weworkremotely` | `const { parseWeWorkRemotely, normalizeAll } = …` y `parseWeWorkRemotely(response.body)` | `[{ "id": "weworkremotely", "url": "https://weworkremotely.com/remote-jobs.rss" }]` |
+| `source-getonboard` | `const { parseGetOnBoard, normalizeAll } = …` y `parseGetOnBoard(response.body)` | `[{ "id": "getonboard", "url": "https://www.getonbrd.com/api/v0/search/jobs?remote=true&per_page=120&lang=en&expand%5B%5D=company&expand%5B%5D=tags&expand%5B%5D=seniority&expand%5B%5D=modality" }]` |
 
-Prueba cada uno (Remote OK da ~99 ofertas y WWR ~91), fija la salida de `Descargar`, **publícalo** y anota su id.
+Prueba cada uno (Remote OK da ~99 ofertas, WWR ~91 y Get on Board ~119), fija la salida de `Descargar`, **publícalo** y anota su id.
+
+> Para no copiar URLs largas a mano, puedes sacarlas de la base: `SELECT id, url FROM sources;` (con `npm run db:psql`).
 
 ---
 
 ## Paso 3 — Registrar los conectores en `sources`
 
-Pásame los 3 ids y los agrego a `db/seed/01_sources.sql`. Así quedan versionados y se cargan solos en cada `docker compose up`.
+Pásame los 4 ids y los agrego a `db/seed/01_sources.sql`. Así quedan versionados y se cargan solos en cada `docker compose up`.
 
 Si quieres probar antes, puedes ponerlos a mano (el seed no los pisa):
 
@@ -152,6 +156,7 @@ npm run db:psql
 UPDATE sources SET connector_workflow_id = '<id>' WHERE id = 'remotive';
 UPDATE sources SET connector_workflow_id = '<id>' WHERE id = 'remoteok';
 UPDATE sources SET connector_workflow_id = '<id>' WHERE id = 'weworkremotely';
+UPDATE sources SET connector_workflow_id = '<id>' WHERE id = 'getonboard';
 ```
 
 ---
@@ -269,7 +274,7 @@ El estado queda en `success`, en `partial` si falló alguna fuente, o en `failed
    SELECT id, status, stats->'new' AS nuevas, stats->'existing' AS existentes FROM runs ORDER BY id;
    SELECT count(*), count(DISTINCT fingerprint) FROM opportunities;
    ```
-   Lo esperado: la primera ejecución tiene `nuevas` ≈ 190 o más, la segunda `nuevas = 0`, y los dos `count` son iguales.
+   Lo esperado: la primera ejecución tiene `nuevas` ≈ 300 o más (las cuatro fuentes), la segunda `nuevas` = 0 o casi 0 (solo lo publicado entre una ejecución y otra), y los dos `count` son iguales.
 
 ### B. La caída de una fuente no detiene a las demás
 
@@ -278,7 +283,7 @@ El estado queda en `success`, en `partial` si falló alguna fuente, o en `failed
    UPDATE sources SET url = 'https://fuente-caida.invalid/api' WHERE id = 'remoteok';
    ```
 2. Ejecuta `main-daily`. Tarda unos 15 s más por los reintentos.
-3. El último registro de `runs` debe tener `status = 'partial'`, el error en `stats->'sources'->'remoteok'` y las otras dos fuentes con sus datos.
+3. El último registro de `runs` debe tener `status = 'partial'`, el error en `stats->'sources'->'remoteok'` y las otras tres fuentes con sus datos.
 4. Restaura la URL original recargando el seed:
    ```bash
    npm run db:migrate
@@ -292,4 +297,4 @@ El estado queda en `success`, en `partial` si falló alguna fuente, o en `failed
 npm run workflows:export
 ```
 
-Escribe los 4 JSON en `workflows/`. Avísame y los reviso nodo por nodo antes del commit.
+Escribe los 5 JSON en `workflows/`. Avísame y los reviso nodo por nodo antes del commit.

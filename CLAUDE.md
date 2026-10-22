@@ -33,6 +33,7 @@ El objetivo no es solo terminar el proyecto: Alessandro debe ganar experiencia r
 - SO de Alessandro: Windows 11.
 - Stack: n8n 2.44.4 + PostgreSQL 17 vía Docker Compose; lógica en JavaScript (Node, ESM) con `node:test`; aviso por Telegram; Git + GitHub.
 - Postgres local de Alessandro ocupa el 5432: en su `.env` el radar usa `POSTGRES_PORT=5433`.
+- Fuentes: Remotive, Remote OK, WWR, Get on Board; LinkedIn solo vía correos de alerta en Gmail (fase 1b). Avisos: resumen diario + alerta inmediata por umbral (ADR 0006). Fase 6: migrar el Compose a Oracle Cloud Always Free.
 
 ## Convenciones técnicas
 

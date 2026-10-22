@@ -44,6 +44,8 @@ docker compose up -d
 | [Remotive](https://remotive.com) | API pública | Máx. ~4 consultas al día, atribución y enlace a la oferta, no reenviar a terceros. [Términos](https://github.com/remotive-com/remote-jobs-api) |
 | [Remote OK](https://remoteok.com) | API pública | Atribución y enlace *follow* a la oferta, sin usar su logo. Términos en el primer elemento de [la API](https://remoteok.com/api). |
 | [We Work Remotely](https://weworkremotely.com) | RSS | Uso libre con atribución de los enlaces. [Página del RSS](https://weworkremotely.com/remote-job-rss-feed) |
+| [Get on Board](https://www.getonbrd.com) | API pública | Abierta y sin autenticación; bolsa de Latinoamérica. [Documentación](https://www.getonbrd.com/api-doc.html) |
+| Alertas de LinkedIn (fase 1b) | Gmail | Solo se leen los correos de alerta propios; el radar nunca entra a LinkedIn. |
 
 Detalle y verificación: [ADR 0002](docs/decisions/0002-fuentes-v1.md).
 

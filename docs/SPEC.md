@@ -2,6 +2,14 @@
 
 Oct 20, 2026 · @Aless
 
+> **Cambios del 2026-10-21.** Se integró el documento "Radar de empleo en n8n — Documento técnico" (Oct 21, 2026):
+> - Nuevas fuentes: Get on Board (API pública) y alertas de empleo de LinkedIn leídas desde Gmail (fase 1b).
+> - Avisos: resumen diario más una alerta inmediata para ofertas con puntaje muy alto ([ADR 0006](decisions/0006-modelo-de-avisos.md)).
+> - Nueva fase 6: migrar el mismo Compose a un VPS gratuito (Oracle Cloud Always Free).
+> - Puntuación con Gemini: pregunta abierta para la fase 2.
+>
+> Se mantuvo la deduplicación por fingerprint en vez de por URL ([ADR 0004](decisions/0004-fingerprint.md)): la misma oferta tiene una URL distinta en cada fuente. También se mantuvo sin penalización por AWS/Azure.
+
 ## Resumen y objetivos
 
 Radar de Oportunidades es un motor en n8n que cada mañana recolecta oportunidades de fuentes públicas, las filtra y puntúa contra un perfil, y avisa solo de las mejores. El primer caso de uso es la búsqueda de empleo remoto de Alessandro (automatización, integración, full-stack, IA). La arquitectura se diseña desde el día uno para crecer a más fuentes, más perfiles y más canales sin reescribir el núcleo.
@@ -25,7 +33,7 @@ La v1 sirve a un solo perfil (Alessandro) con 2 o 3 fuentes y un canal de aviso,
 
 **Dentro de la v1**
 
-- Recolección programada desde fuentes con API o RSS públicos.
+- Recolección programada desde fuentes con API o RSS públicos, y desde los correos de alerta de LinkedIn que llegan a la bandeja de Alessandro.
 - Normalización a un esquema común y eliminación de duplicados.
 - Filtros duros y puntuación de encaje por perfil.
 - Resumen diario con las mejores ofertas.
@@ -40,7 +48,7 @@ La v1 sirve a un solo perfil (Alessandro) con 2 o 3 fuentes y un canal de aviso,
 
 **Reglas no negociables**
 
-1. **Sin scraping de LinkedIn** ni de sitios cuyos términos lo prohíban. Solo APIs oficiales, RSS o páginas que lo permitan explícitamente.
+1. **Sin scraping de LinkedIn** ni de sitios cuyos términos lo prohíban. Solo APIs oficiales, RSS o páginas que lo permitan explícitamente. El radar nunca entra a LinkedIn con la sesión de Alessandro: de LinkedIn solo lee los correos de alerta que ya llegan a su Gmail.
 2. **Sin postulación automática.** El sistema encuentra, puntúa y prepara; la persona revisa y envía.
 3. **Costo cero.** Solo herramientas gratuitas o autoalojadas.
 4. **Secretos fuera del código.** Credenciales y tokens en variables de entorno o en las credenciales de n8n, nunca en el repositorio.
@@ -123,11 +131,14 @@ Cada módulo es un workflow de n8n independiente que se comunica con los demás 
 
 - Asigna a cada oferta que pasa los filtros una puntuación de 0 a 100 y una justificación breve.
 - Primera versión con reglas deterministas (palabras clave con pesos). La puntuación con un LLM queda como mejora opcional detrás de una interfaz común.
+- Pregunta abierta (fase 2): usar Gemini, que Alessandro ya usa, para leer la descripción y devolver puntaje y motivo. Una opción intermedia: reglas para filtrar y ordenar, y Gemini solo para explicar las finalistas.
 
 **RF-5 Aviso**
 
-- Un resumen diario con las 3 a 5 ofertas de mayor puntuación: título, empresa, pago si existe, puntuación, justificación y enlace.
-- Canal de la v1: Telegram (bot gratuito) o correo; el canal es un sub-workflow intercambiable.
+- Un resumen diario con las 3 a 5 ofertas de mayor puntuación: título, empresa, pago si existe, puntuación, justificación, fuente y enlace.
+- Además, una **alerta inmediata** cuando una revisión encuentra una oferta nueva con puntaje igual o mayor al umbral del perfil (por ejemplo, 80). Esa oferta no se repite en el resumen.
+- El flujo revisa las fuentes un par de veces al día. El horario exacto se define en la fase 3, según cuándo está encendida la PC.
+- Canal de la v1: Telegram (bot gratuito). El canal es un sub-workflow intercambiable.
 - Si no hay ofertas nuevas, no se envía nada o se envía un aviso corto, según configuración.
 
 **RF-6 Registro y observabilidad**
@@ -207,7 +218,17 @@ Los pesos son un punto de partida. Antes de automatizar, se validan con 20 a 30 
 | Aviso | Bot de Telegram (o SMTP) | Gratis y fácil de cambiar |
 | Control de versiones | Git + GitHub | Portafolio público |
 
-**Fuentes candidatas para la v1** (verificar en la fase 0 que sigan disponibles y que sus términos permitan el uso): API pública de Remotive, API pública de RemoteOK y el RSS de We Work Remotely. Elegir 2 o 3 y documentar en el README los términos de cada una.
+**Fuentes de la v1** (términos verificados en [ADR 0002](decisions/0002-fuentes-v1.md)):
+
+| Fuente | Cómo entra | Estado |
+|---|---|---|
+| Remotive | API pública | Fase 1 (solo trae 10 ofertas por consulta) |
+| Remote OK | API pública | Fase 1 |
+| We Work Remotely | RSS, feed general | Fase 1 |
+| Get on Board | API pública, búsqueda de ofertas 100 % remotas | Fase 1 (agregada el 2026-10-21) |
+| Alertas de LinkedIn | Nodo Gmail: lee los correos de alerta de la bandeja de Alessandro | Fase 1b, pendiente de activar las alertas |
+
+Pregunta abierta: ¿qué otras bolsas con RSS o API conviene sumar?
 
 **Estructura propuesta**
 
@@ -253,6 +274,12 @@ Las fases 0 a 3 forman la v1 y caben en unas dos semanas de trabajo realista. Ca
 - Workflow principal que guarda ofertas, deduplica y registra la ejecución en `runs`.
 - *Aceptación:* dos ejecuciones seguidas no crean duplicados; la caída simulada de una fuente no detiene las demás.
 
+**Fase 1b — Alertas de LinkedIn vía Gmail** (1–2 días, después de aceptar la fase 1)
+
+- Alessandro activa las alertas de empleo de LinkedIn y conecta su Gmail a n8n (credencial OAuth de Google, gratuita).
+- Conector `source-linkedin-alerts` con el mismo contrato que los demás: lee los correos de alerta no procesados y extrae las ofertas con un parser en `lib/`.
+- *Aceptación:* las ofertas de un correo de alerta real quedan en `opportunities` sin duplicarse con las demás fuentes.
+
 **Fase 2 — Puntuar** (2–3 días)
 
 - Filtros duros y puntuación en `lib/` con pruebas, leídos desde `profiles`.
@@ -275,6 +302,12 @@ Las fases 0 a 3 forman la v1 y caben en unas dos semanas de trabajo realista. Ca
 
 - Agregar un segundo perfil real (un compañero) sin cambiar código.
 - *Aceptación:* cada perfil recibe su propio resumen con su propia puntuación.
+
+**Fase 6 — Migrar a un VPS gratuito** (después de la v1)
+
+- Llevar el mismo `docker-compose.yml` a Oracle Cloud Always Free (2 núcleos ARM, 12 GB de RAM) cuando Alessandro tenga una tarjeta que acepte su verificación. Así el radar corre las 24 horas sin depender de la PC.
+- Alternativas evaluadas: Google Cloud e2-micro (gratis, pero 1 GB de RAM es muy justo para n8n) y un VPS de pago (~$5 al mes, descartado por la regla de costo cero).
+- *Aceptación:* el radar corre en el VPS 7 días seguidos con los datos migrados desde la PC (respaldo y restauración con `npm run db:backup` y `db:restore`).
 
 ## Expansión horizontal futura
 
@@ -323,12 +356,15 @@ Esta sección está escrita para el agente que implementa el proyecto. El objeti
 | Una fuente cierra su API o cambia el formato | Conectores aislados y pruebas con respuestas guardadas; el fallo de una fuente no rompe el resto |
 | Pocas ofertas compatibles con Venezuela | Medir en la fase 1 cuántas pasan el filtro de ubicación; si son muy pocas, sumar fuentes antes de ajustar reglas |
 | La puntuación por reglas ordena mal | Validación manual con 20–30 ofertas antes de automatizar; ajustar pesos con datos |
-| Correr n8n solo cuando la computadora está encendida | Aceptable en la v1 (ejecución al encender); evaluar alojamiento gratuito después |
+| Correr n8n solo cuando la computadora está encendida | Aceptable en la v1 (revisiones en los horarios en que la PC está encendida); fase 6: migrar a Oracle Cloud Always Free |
 | Crecer el alcance antes de terminar la v1 | Ideas nuevas a `docs/ideas.md`, no al código |
 
 **Preguntas abiertas**
 
-- [ ] ¿Telegram o correo como canal de la v1?
-- [ ] ¿Dónde corre n8n a diario: la computadora de Alessandro o un servidor gratuito?
-- [ ] ¿Qué 2 o 3 fuentes pasan la verificación de términos en la fase 0?
-- [ ] ¿El repositorio es público desde el inicio o se publica al cerrar la fase 3?
+- [x] ¿Telegram o correo como canal de la v1? → Telegram.
+- [x] ¿Dónde corre n8n a diario? → En la PC de Alessandro; Oracle Cloud en la fase 6.
+- [x] ¿Qué fuentes pasan la verificación de términos? → Remotive, Remote OK, We Work Remotely y Get on Board ([ADR 0002](decisions/0002-fuentes-v1.md)).
+- [x] ¿El repositorio es público desde el inicio? → Sí.
+- [ ] ¿Puntuación por reglas o con un LLM (Gemini) que lea la descripción y devuelva puntaje y motivo? → Se decide al planear la fase 2.
+- [ ] ¿Frecuencia de revisión y horario en que la PC estará encendida? → Se decide en la fase 3.
+- [ ] ¿Qué otras bolsas con RSS o API conviene sumar?
