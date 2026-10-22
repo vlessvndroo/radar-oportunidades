@@ -1,0 +1,953 @@
+{
+  "data": [
+    {
+      "id": "client-onboarding-technical-support-fully-automated-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Client Onboarding & Technical Support",
+        "description_headline": "REQUIREMENTS",
+        "description": "<ul><li>2+ years hands on GoHighLevel experience (snapshots, workflows, triggers, custom fields, funnels, calendars)</li><li>Strong Meta Business Manager knowledge (permissions, ad accounts, pixel, page connections, common restrictions)</li><li>Experience with automation tools like n8n, Zapier, or Make, plus webhooks and APIs</li><li>Experience with AI tools (ChatGPT, Claude, AI agents or voice AI is a big plus)</li><li>Excellent spoken and written English. You will be on calls with US business owners.</li><li>Organized enough to manage 20+ onboardings at once without anything slipping</li><li>Reliable internet, backup power, quiet workspace, working camera and mic</li></ul>",
+        "projects": "<p>Fully Automated builds done for you lead generation systems for insurance agents across the US. Every client gets Meta ads, funnels, a CRM, and AI follow up built and running for them. We are growing fast and onboard 20+ new clients every month.</p><p>We need ONE person who owns client onboarding and technical support from day one until the client is live and getting leads. This is not a beginner role. If you have built inside GoHighLevel and Meta Business Manager for real clients, keep reading.</p>",
+        "functions_headline": "GoHighLevel + Meta Ads Onboarding and Tech Support Specialist (US Hours)",
+        "functions": "<ul><li>Onboard 20+ new clients per month from signup to launch</li><li>Set up GoHighLevel subaccounts from our snapshots: pipelines, calendars, workflows, forms, funnels</li><li>Connect domains, email (DNS, SPF, DKIM, DMARC), phone numbers, and A2P 10DLC registration</li><li>Set up client access to Meta Business Manager, ad accounts, pages, pixel, and payment methods</li><li>Install and test our AI follow up (SMS, email, chatbot) and fix anything that breaks</li><li>Run onboarding calls with clients in clear, confident English</li><li>Handle client tech support tickets and solve them fast</li><li>Troubleshoot workflows, automations, integrations, and lead delivery issues</li><li>Write and update SOPs and checklists so onboarding gets faster every month</li></ul>",
+        "benefits_headline": "WHAT YOU GET",
+        "benefits": "<p>SCHEDULE</p><ul><li>Monday to Friday, 8am to 5pm US Central Time</li><li>Full time, long term, 40 hours per week</li><li>Must be available live during these hours (Slack, Zoom, client calls)</li></ul><ul><li>$750 to $1,000 per month based on experience</li><li>Performance bonuses tied to onboarding speed and client retention</li><li>Long term role with room to grow as we scale</li><li>Work directly with the founder on a fast growing US company</li></ul>",
+        "desirable_headline": "BONUS POINTS",
+        "desirable": "<ul><li>Experience with insurance agents or agency clients</li><li>Retell AI or other voice AI experience</li><li>A2P 10DLC approvals you have personally gotten through</li></ul>",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "en",
+        "category_name": "Technical Support",
+        "perks": [
+          "remote_full"
+        ],
+        "min_salary": 1000,
+        "max_salary": 1400,
+        "published_at": 1792618046,
+        "response_time_in_days": {
+          "min": null,
+          "max": null
+        },
+        "applications_count": 4,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "1",
+            "type": "modality",
+            "attributes": {
+              "name": "Full time",
+              "locale_key": "full_time"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "3",
+            "type": "seniority",
+            "attributes": {
+              "name": "Semi Senior",
+              "locale_key": "semi_senior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "go-high-level",
+              "type": "tag",
+              "attributes": {
+                "name": "Go High-Level",
+                "keywords": null
+              }
+            },
+            {
+              "id": "meta-business",
+              "type": "tag",
+              "attributes": {
+                "name": "Meta Business",
+                "keywords": "Meta Business Manager, Meta Business Suite, Meta Buying, Meta Campaigns"
+              }
+            },
+            {
+              "id": "marketing-automation",
+              "type": "tag",
+              "attributes": {
+                "name": "Marketing Automation",
+                "keywords": "Martech, MarTech Integration"
+              }
+            },
+            {
+              "id": "webhooks",
+              "type": "tag",
+              "attributes": {
+                "name": "Webhooks",
+                "keywords": "Web Hooks, Webhook"
+              }
+            },
+            {
+              "id": "dns",
+              "type": "tag",
+              "attributes": {
+                "name": "DNS",
+                "keywords": "DNS Administration, DNS Configuration, DNS Service, DNS Setup, DNS Management"
+              }
+            },
+            {
+              "id": "technical-support",
+              "type": "tag",
+              "attributes": {
+                "name": "Technical Support",
+                "keywords": "Technical Troubleshooting, Tech Support, System Support, Tech Environment, Technical Services, Technology Services, Technical Issue Resolution, technical support, Tech support, Técnico IT, IT Technician, Técnico en Soporte, Soporte, Soporte técnico"
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "fully-automated",
+            "type": "company",
+            "attributes": {
+              "name": "Fully Automated",
+              "description": "Fully Automated builds done for you lead generation systems for insurance agents across the United States. We combine Meta Ads, GoHighLevel, and AI automation to help agents get more leads and close more policies. We're a fast growing, remote first compan",
+              "long_description": "",
+              "projects": null,
+              "benefits": "<p>SCHEDULE</p><ul><li>Monday to Friday, 8am to 5pm US Central Time</li><li>Full time, long term, 40 hours per week</li><li>Must be available live during these hours (Slack, Zoom, client calls)</li></ul><ul><li>$750 to $1,000 per month based on experience</li><li>Performance bonuses tied to onboarding speed and client retention</li><li>Long term role with room to grow as we scale</li><li>Work directly with the founder on a fast growing US company</li></ul>",
+              "web": "https://fullyautomated.io/",
+              "twitter": null,
+              "github": null,
+              "facebook": null,
+              "angellist": null,
+              "country": "US",
+              "response_time_in_days": {
+                "min": null,
+                "max": null
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/20873/634401222_1507665688027007_4629909315824557994_n.jpg"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/client-onboarding-technical-support-fully-automated-remote"
+      }
+    },
+    {
+      "id": "back-end-engineer-nestjs-aws-witi-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Back-end Engineer – Node.js / NestJS",
+        "description_headline": "Requisitos Excluyentes",
+        "description": "<ul><li>Al menos 4 años de experiencia profesional en desarrollo backend, con microservicios en producción.</li><li>Trayectoria principalmente backend, desarrollando y manteniendo microservicios con NestJS y TypeScript (o framework equivalente como Spring o .NET Core).</li><li>Experiencia en AWS en despliegues e infraestructura cloud, no solo como usuario de servicios puntuales.</li><li>Experiencia aplicando arquitectura hexagonal, principios SOLID y buenas prácticas de diseño, con ejemplos concretos de decisiones de arquitectura tomadas.</li><li>Experiencia trabajando con monorepos y librerías compartidas.</li><li>Experiencia construyendo soluciones escalables y mantenibles, con foco en calidad de código y testing automatizado (Jest).</li><li>Experiencia diseñando e integrando APIs REST.</li><li>Experiencia con bases de datos SQL y NoSQL (PostgreSQL, MySQL, MongoDB o DynamoDB).</li><li>Experiencia con Redis y colas de mensajería (SQS, Kafka o similar).</li><li>Experiencia con Docker y uso de Kubernetes a nivel de despliegue, configuración y depuración de servicios.</li><li>Experiencia con CI/CD (GitHub Actions o similar).</li></ul>",
+        "projects": "<p>En WiTi somos una consultora tecnológica especializada en el desarrollo de soluciones digitales, innovación y transformación tecnológica. Trabajamos junto a importantes organizaciones de Latinoamérica, conectando talento especializado con proyectos de alto impacto.</p><p>Buscamos un/a Back-end Engineer para integrarse a un equipo de e-commerce de supermercados de una empresa líder del retail. El equipo desarrolla y mantiene los microservicios que sostienen dos plataformas digitales en producción con tráfico real, e integra los sistemas core de la compañía.</p><p>Serás dueño/a de tu código en producción: participarás en despliegues, monitoreo y resolución de incidentes, y aportarás criterio técnico en el diseño de APIs, servicios y decisiones de arquitectura. Buscamos a alguien con trayectoria principalmente backend, foco en soluciones escalables y mantenibles, calidad de código y testing automatizado.</p>",
+        "functions_headline": "Funciones del cargo",
+        "functions": "<ul><li>Desarrollar y mantener microservicios backend en Node.js, NestJS y TypeScript para plataformas de e-commerce en producción, con tráfico real de retail.</li><li>Diseñar soluciones aplicando arquitectura hexagonal, principios SOLID y buenas prácticas de diseño, y fundamentar las decisiones de arquitectura.</li><li>Diseñar, construir e integrar APIs REST con los sistemas core de la compañía.</li><li>Desplegar y operar servicios en AWS, participando en la infraestructura cloud con Docker y Kubernetes.</li><li>Trabajar sobre monorepos y librerías compartidas, idealmente con Nx.</li><li>Hacerse cargo del código en producción: despliegues, monitoreo y resolución de incidentes.</li><li>Modelar y optimizar datos en bases SQL y NoSQL, y trabajar con caché y colas de mensajería.</li><li>Mantener la calidad con testing automatizado y pipelines de CI/CD.</li></ul>",
+        "benefits_headline": "Beneficios",
+        "benefits": "<p>En WiTi promovemos un ambiente colaborativo donde la cultura del aprendizaje es parte fundamental. Entre nuestros beneficios están:</p><ul><li>Plan de carrera personalizado para el desarrollo profesional.</li><li>Certificaciones para continuar creciendo en tu carrera.</li><li>Cursos de idiomas, apoyando el desarrollo personal y profesional.</li></ul>",
+        "desirable_headline": "Requisitos Deseables",
+        "desirable": "<ul><li>Experiencia en e-commerce o retail: flujo de compra, órdenes, pagos, catálogo, carro y checkout.</li><li>Monorepos con Nx.</li><li>Experiencia con plataformas headless.</li><li>GraphQL.</li><li>Herramientas de monitoreo (New Relic, Coralogix, OpenTelemetry).</li><li>BigQuery o pipelines de datos.</li><li>Experiencia con agentes de IA o sistemas basados en LLM (orquestación de agentes, RAG), idealmente al menos 1 año.</li></ul>",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "lang_not_specified",
+        "category_name": "Programming",
+        "perks": [
+          "remote_full",
+          "digital_library",
+          "computer_provided",
+          "personal_coaching",
+          "informal_dresscode"
+        ],
+        "min_salary": null,
+        "max_salary": null,
+        "published_at": 1792608377,
+        "response_time_in_days": {
+          "min": null,
+          "max": null
+        },
+        "applications_count": 58,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "1",
+            "type": "modality",
+            "attributes": {
+              "name": "Full time",
+              "locale_key": "full_time"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "4",
+            "type": "seniority",
+            "attributes": {
+              "name": "Senior",
+              "locale_key": "senior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "node-js",
+              "type": "tag",
+              "attributes": {
+                "name": "Node.js",
+                "keywords": "NodeJS, Node, Jade, Express, Sails.js, Koa, Express.js, MERN, Node Frameworks, Node WebKit, NW.js"
+              }
+            },
+            {
+              "id": "nestjs",
+              "type": "tag",
+              "attributes": {
+                "name": "NestJS",
+                "keywords": "Nest.js, Nest"
+              }
+            },
+            {
+              "id": "typescript",
+              "type": "tag",
+              "attributes": {
+                "name": "TypeScript",
+                "keywords": "Typesafe"
+              }
+            },
+            {
+              "id": "aws",
+              "type": "tag",
+              "attributes": {
+                "name": "AWS",
+                "keywords": "AWS Core Services, AWS Core, Amazon Libraries, Amazon Web Services, AWS Cloud Computing, AWS Certified Cloud Practitioner, AWS Certificates, AWS Certifications, AWS Certification, AWS Cloud Practitioner, AWS Cloud, AWS Services, Cloud AWS, Amazon AWS"
+              }
+            },
+            {
+              "id": "microservices",
+              "type": "tag",
+              "attributes": {
+                "name": "Microservices",
+                "keywords": "Microservicios, Microservices APIs, Micro Services, Microservice Architecture, Microservices Architectures, Micro-services Architecture, Microservices Architecture, Microservice"
+              }
+            },
+            {
+              "id": "hexagonal-architecture",
+              "type": "tag",
+              "attributes": {
+                "name": "Hexagonal Architecture",
+                "keywords": null
+              }
+            },
+            {
+              "id": "docker",
+              "type": "tag",
+              "attributes": {
+                "name": "Docker",
+                "keywords": "Docker CE, Docker Engine, Dockers, Docker Containers, Dockerfile Development, DockerHub, Docker Hub, Docker Registries, Docker Registry, Docker Clusters, Docker-compose, Docker Compose, Docker Swarm"
+              }
+            },
+            {
+              "id": "kubernetes",
+              "type": "tag",
+              "attributes": {
+                "name": "Kubernetes",
+                "keywords": "K8s, kubectl, Kubernetes Administration, Kubernetes Architecture, Kubernetes Deployment, Kubernetes Engine, Kubernetes GKE, Kubernetes Monitoring, Kubernetes On-Premises, Kubeadm, Kubeflow"
+              }
+            },
+            {
+              "id": "automated-testing",
+              "type": "tag",
+              "attributes": {
+                "name": "Automated Testing",
+                "keywords": null
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "witi",
+            "type": "company",
+            "attributes": {
+              "name": "WiTi",
+              "description": "WiTi, Tecnología para innovar.",
+              "long_description": "<div>Nos dedicamos al desarrollo de software y soluciones tecnológicas. Nuestra especialidad es la integración de sistemas, software a medida y desarrollos innovadores en el mundo de los dispositivos móviles. Nuestra mayor motivación es resolver problemas complejos a través de soluciones innovadoras. Nuestro método de trabajo se basa en entender el negocio y la necesidad del cliente, ; queremos ser un \"partner\", de tal modo poder apoyar en la toma de decisiones a la hora de implantar soluciones tecnológicas.</div>",
+              "projects": "<p>En WiTi conectamos al mejor talento tecnológico con proyectos de alto impacto en Latinoamérica. Somos una empresa especializada en servicios de tecnología que transforma desafíos tecnológicos en soluciones innovadoras. Desde 2017, operamos en Chile, Uruguay y Colombia, ofreciendo Talent as a Service, Software Factory y Consultoría TI Integral en áreas como cloud, DevOps e IA/ML.&nbsp;<br><br>&nbsp;El QA Automation Engineer se integrará al equipo de calidad para una plataforma enterprise de gestión publicitaria, con un monorepo que agrupa más de 12 aplicaciones dentro del ecosistema del producto. Buscamos fortalecer la estrategia de calidad, impulsar la automatización de pruebas, integrar pipelines de CI/CD y explorar herramientas de IA aplicadas a testing para detección temprana de errores. Se trabajará con desarrollo, arquitectura y DevOps para definir estándares de calidad, ampliar la cobertura de pruebas y garantizar la estabilidad en despliegues frecuentes.</p>",
+              "benefits": "<p>En WiTi, ofrecemos un entorno de trabajo 100% remoto, lo que permite una gran flexibilidad y autonomía. Además, promovemos un ambiente colaborativo donde la cultura del aprendizaje es parte fundamental. Entre nuestros beneficios están:</p><ul><li><strong>Plan de carrera</strong> personalizado para el desarrollo profesional.</li><li><strong>Certificaciones</strong>, para continuar creciendo en tu carrera.</li><li><strong>Cursos de idiomas</strong>, apoyando el desarrollo personal y profesional.</li></ul><p>Si eres apasionado por la tecnología y quieres formar parte de nuestro equipo, ¡nos encantaría conocerte!</p>",
+              "web": "http://www.witi.cl",
+              "twitter": "",
+              "github": "",
+              "facebook": "witi.cl",
+              "angellist": "",
+              "country": "CL",
+              "response_time_in_days": {
+                "min": 4,
+                "max": 14
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/4881/Logo_WiTI_SII.png"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/back-end-engineer-nestjs-aws-witi-remote"
+      }
+    },
+    {
+      "id": "paid-media-buyer-meta-google-linkedin-for-b2b-saas-simpler-gtm-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Paid Media Buyer (Meta, Google, Linkedin) for B2B SaaS",
+        "description_headline": "Qualifications and requirements",
+        "description": "<p>What we're looking for:</p><p>- 3+ years in paid media, ideally B2B SaaS lead generation.</p><p>- Hands-on experience managing $50k+/month across Meta, Google and LinkedIn.</p><p>- Strong creative skills (Figma, Canva or AI tools) and a testing mindset.</p><p>- Proven CRO wins on landing pages.</p><p>- Fluent written and spoken English.</p><p>- Available 9am to 5pm ET.</p><p>- Based in Latin America.</p><p>To apply: Share 2 or 3 campaign results (spend, CPL or CPA, what you changed) and a few creatives you made.</p>",
+        "projects": "<p>Simpler GTM is a growth marketing and GTM engineering consultancy for B2B SaaS startups. We run lead generation that turns ad spend into pipeline, managing about $75k a month across Meta, Google and LinkedIn for clients. We're a small, founder-led team, and you'll work directly with both co-founders, our designers and GTM engineers, and client teams. We move fast, test constantly, and care about qualified pipeline, not vanity metrics.</p>",
+        "functions_headline": "Job functions",
+        "functions": "<p>You'll own paid acquisition across about $75k a month in spend on Meta, Google and LinkedIn for our B2B SaaS clients. You'll plan, launch and optimize campaigns, make the creatives, and improve the landing pages they send traffic to.</p><p>- Build, launch and optimize campaigns on Meta, Google and LinkedIn to drive qualified leads at target CPL.</p><p>- Make 20 to 30 static and simple video creatives per week, and run structured creative tests.</p><p>- Run CRO on landing pages and forms (A/B tests, copy, layout) to raise conversion rates.</p><p>- Own tracking, attribution and weekly performance reporting with clear next steps.</p><p>- Work directly with the founders and client teams.</p>",
+        "benefits_headline": "Conditions",
+        "benefits": "<p>Pay is $1,500 to $2,000 USD per month, full time. Hours are 9am to 5pm ET. Fully remote.</p>",
+        "desirable_headline": "Desirable skills",
+        "desirable": "",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "en",
+        "category_name": "Digital Marketing",
+        "perks": [
+          "remote_full"
+        ],
+        "min_salary": 1500,
+        "max_salary": 2000,
+        "published_at": 1792606203,
+        "response_time_in_days": {
+          "min": null,
+          "max": null
+        },
+        "applications_count": 6,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "1",
+            "type": "modality",
+            "attributes": {
+              "name": "Full time",
+              "locale_key": "full_time"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "3",
+            "type": "seniority",
+            "attributes": {
+              "name": "Semi Senior",
+              "locale_key": "semi_senior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "paid-media",
+              "type": "tag",
+              "attributes": {
+                "name": "Paid Media",
+                "keywords": "Paid Media Specialist, Campañas pagadas, Paid Media Campaigns, Paid Media Design, Paid Media Formats, Paid Media Management, Paid Media Strategies, Paid Media Platforms, Paid Media Strategy"
+              }
+            },
+            {
+              "id": "facebook-ads",
+              "type": "tag",
+              "attributes": {
+                "name": "Meta Ads",
+                "keywords": "Facebook Ads, Meta Business, Meta BM, Meta Ads Manager"
+              }
+            },
+            {
+              "id": "google-adwords",
+              "type": "tag",
+              "attributes": {
+                "name": "Google Ads",
+                "keywords": "Google AdWords, Adsense, Google Ads Manager, Google Ads Editor, Google Ads Display, Google Ads Search, Google Ads API, Google Ads Certification, Google Ads Design, Google Ads Video, AdWords"
+              }
+            },
+            {
+              "id": "linkedin-ads",
+              "type": "tag",
+              "attributes": {
+                "name": "LinkedIn Ads",
+                "keywords": null
+              }
+            },
+            {
+              "id": "conversion-rate-optimization",
+              "type": "tag",
+              "attributes": {
+                "name": "Conversion Rate Optimization",
+                "keywords": "Conversion Rate Analysis, Conversion Optimization, Conversion Rates, Conversion Rate, conversion rate optimization, CRO Strategies, CRO Tools, CRO"
+              }
+            },
+            {
+              "id": "figma",
+              "type": "tag",
+              "attributes": {
+                "name": "Figma",
+                "keywords": "Figma Libraries, Figma Mockups, Figma Tokens, Figma Jam, Figma FigJam, Figma Components, Figma Dev Mode, Figma Integration, FigJam"
+              }
+            },
+            {
+              "id": "a-b-testing",
+              "type": "tag",
+              "attributes": {
+                "name": "A/B Testing",
+                "keywords": ""
+              }
+            },
+            {
+              "id": "canva",
+              "type": "tag",
+              "attributes": {
+                "name": "Canva",
+                "keywords": "Canva Pro"
+              }
+            },
+            {
+              "id": "attribution",
+              "type": "tag",
+              "attributes": {
+                "name": "Attribution",
+                "keywords": null
+              }
+            },
+            {
+              "id": "landing-page-optimization",
+              "type": "tag",
+              "attributes": {
+                "name": "Landing Page Optimization",
+                "keywords": null
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "simpler-gtm",
+            "type": "company",
+            "attributes": {
+              "name": "Simpler GTM",
+              "description": "Own paid acquisition across ~$75k/mo on Meta, Google and LinkedIn for B2B SaaS lead gen clients, including creatives and CRO.",
+              "long_description": "",
+              "projects": null,
+              "benefits": "<p>Pay is $1,500 to $2,000 USD per month, full time. Hours are 9am to 5pm ET. Fully remote.</p>",
+              "web": "https://simplergtm.com",
+              "twitter": null,
+              "github": null,
+              "facebook": null,
+              "angellist": null,
+              "country": "US",
+              "response_time_in_days": {
+                "min": null,
+                "max": null
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/20864/simplergtm-logo-square.png"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/paid-media-buyer-meta-google-linkedin-for-b2b-saas-simpler-gtm-remote"
+      }
+    },
+    {
+      "id": "creative-strategist-promarketing-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Creative Strategist",
+        "description_headline": "Lo que buscamos",
+        "description": "<ul><li>3+ años de experiencia como Creative Strategist, Planner Creativo, Strategic Planner o posiciones similares. </li><li>Experiencia en agencias creativas, publicidad, branding o marketing. </li><li>Capacidad para desarrollar conceptos creativos sólidos y campañas integrales. </li><li>Excelente redacción y habilidad para construir narrativas de marca. </li><li>Conocimiento de marketing digital, redes sociales y campañas de performance. </li><li>Pensamiento estratégico combinado con creatividad. </li><li>Capacidad para presentar y defender ideas frente a distintos stakeholders.</li></ul>",
+        "projects": "<h3><strong>Sobre el rol</strong></h3><div>Buscamos una persona que convierta datos, tendencias e insights en ideas creativas que conecten con las personas.</div><div>Como Creative Strategist serás el puente entre negocio, marketing y creatividad. Tu misión será desarrollar conceptos creativos que fortalezcan nuestras campañas y construir una identidad visual y narrativa consistente para cada marca.</div><div>No buscamos únicamente un copywriter ni un director de arte. Buscamos alguien capaz de pensar estratégicamente antes de diseñar una campaña y de traducir objetivos comerciales en ideas memorables.</div><p>Trabajarás de forma cercana con Marketing Strategy, Diseño, CRM y Business Intelligence para desarrollar campañas que generen resultados.</p>",
+        "functions_headline": "Responsabilidades",
+        "functions": "<div>Desarrollar conceptos creativos para campañas comerciales, promocionales y de marca. Traducir objetivos de negocio en propuestas creativas alineadas con cada audiencia. Construir territorios creativos para campañas estacionales, torneos, lanzamientos y eventos especiales. Elaborar briefs creativos claros para el equipo de diseño y contenido. Investigar tendencias de comunicación, publicidad, entretenimiento y cultura digital. Definir líneas narrativas, tono de comunicación y mensajes clave por campaña. Colaborar con Diseño para asegurar una ejecución alineada con el concepto creativo. Participar en sesiones de ideación y desarrollo de nuevas iniciativas. Analizar el desempeño creativo de campañas para identificar oportunidades de mejora. Proponer nuevas formas de comunicar a partir de datos, comportamiento del usuario y aprendizajes del negocio.</div>",
+        "benefits_headline": "Lo que ofrecemos",
+        "benefits": "<p>Formar parte de la construcción de un área creatividad con una visión estratégica. <br>Libertad para proponer ideas y desarrollar nuevos conceptos. <br>Trabajo multidisciplinario con equipos de Estrategia, BI, CRM y Diseño . <br>Espacio para experimentar, innovar y transformar la forma en que comunicamos nuestras marcas.</p><div>Buscamos a alguien que...</div><ul><li>Tenga curiosidad constante por entender a las personas y las tendencias.</li><li>Disfrute transformar información en ideas creativas.</li><li>Sea capaz de defender una propuesta con argumentos estratégicos.</li><li>Combine creatividad con pensamiento analítico.</li><li>Esté siempre buscando nuevas referencias, formatos y formas de comunicar.</li><li>Inspire al equipo creativo y eleve la calidad de cada campaña.</li></ul><div>Si has trabajado creando campañas que lograron conectar con las personas y generar resultados de negocio, queremos conocerte.</div>",
+        "desirable_headline": "Será un gran plus si tienes experiencia en",
+        "desirable": "<ul><li>Industria de casinos online, apuestas deportivas o iGaming.</li><li>Marcas de entretenimiento, gaming, tecnología o consumo masivo.</li><li>Conceptualización de campañas 360°.</li><li>Storytelling y construcción de marcas.</li><li>Copywriting publicitario.</li><li>Motion, contenido audiovisual o producción creativa.</li><li>Uso de herramientas de IA para ideación, generación de conceptos y optimización creativa.</li><li>Interpretación de métricas de campañas para mejorar la creatividad.</li></ul>",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "lang_not_specified",
+        "category_name": "Content, Advertising & Media",
+        "perks": [
+          "remote_full",
+          "flexible_hours"
+        ],
+        "min_salary": null,
+        "max_salary": null,
+        "published_at": 1792527739,
+        "response_time_in_days": {
+          "min": 8,
+          "max": 22
+        },
+        "applications_count": 216,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "1",
+            "type": "modality",
+            "attributes": {
+              "name": "Full time",
+              "locale_key": "full_time"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "3",
+            "type": "seniority",
+            "attributes": {
+              "name": "Semi Senior",
+              "locale_key": "semi_senior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "performance-marketing",
+              "type": "tag",
+              "attributes": {
+                "name": "Performance Marketing",
+                "keywords": "Perform. Marketing"
+              }
+            },
+            {
+              "id": "creative-strategy",
+              "type": "tag",
+              "attributes": {
+                "name": "Creative Strategy",
+                "keywords": "Creative Strategies"
+              }
+            },
+            {
+              "id": "campaign-development",
+              "type": "tag",
+              "attributes": {
+                "name": "Campaign Development",
+                "keywords": null
+              }
+            },
+            {
+              "id": "copywriting",
+              "type": "tag",
+              "attributes": {
+                "name": "Copywriting",
+                "keywords": "Redacción creativa, redactor publicitario, redacción publicitaria, effective copy, Copy Writing, Ad Copywriting"
+              }
+            },
+            {
+              "id": "brand-strategy",
+              "type": "tag",
+              "attributes": {
+                "name": "Brand Strategy",
+                "keywords": null
+              }
+            },
+            {
+              "id": "digital-marketing",
+              "type": "tag",
+              "attributes": {
+                "name": "Digital Marketing",
+                "keywords": "Marketing Digital, Especialista en Marketing Digital, Analista Marketing Digital, Digital Marketing Channels, Digital Campaign Analysis, Digital Campaign Execution, Digital Campaigns Design, Digital Campaigns, Digital Marketing Campaigns"
+              }
+            },
+            {
+              "id": "redes-sociales",
+              "type": "tag",
+              "attributes": {
+                "name": "Social Media",
+                "keywords": "Social Network, TweetDeck, Redes Sociales, Social Media Apps, Social Media Platforms, Social Media Advertising, Social Media Ads, Social Media Analysis, Social Media Analytics, Social Media APIs, Social Media B2B, Social Media Algorithms"
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "promarketing",
+            "type": "company",
+            "attributes": {
+              "name": "Promarketing",
+              "description": "PROMARKETING SPA es una compañía de tecnología e información y la comunicación, nos especializamos en prestar servicios de consultoría, realización de proyectos en el ámbito de desarrollo de aplicaciones, sistemas de información ",
+              "long_description": "",
+              "projects": "<div>Promarketing Chile es una empresa de desarrollo de software especializada en soluciones web escalables e innovadoras, utilizando tecnologías de vanguardia para impulsar la transformación digital, optimizar procesos y destacarse en el mercado.</div><div>Contamos con profesionales altamente capacitados y fomentamos un espacio de trabajo colaborativo y orientado al crecimiento tecnológico de nuestros colaboradores y del negocio.&nbsp;</div><div><strong>¡Queremos que te unas a nuestro equipo como </strong>Diseñador/a Gráfico/a Digital Multicanal <strong>!<br></strong><br></div><div>🚀<strong> Sobre el desafío:<br></strong><br></div><div>En Promarketing Chile estamos en búsqueda de un/a <strong>Diseñador/a Gráfico/a Digital</strong> creativo/a y orientado/a a resultados, para unirse a nuestro equipo de Inteligencia de negocio y datos. Será responsable de diseñar piezas visuales multicanal (email, notificaciones push, pop ups, landing pages, etc.) con enfoque en la conversión y la experiencia de usuario.&nbsp;</div>",
+              "benefits": "<ul><li>Trabajar con un equipo de alto rendimiento, aprendemos y nos desarrollamos juntos.</li><li>Un entorno de trabajo flexible y dinámico.</li><li>Día libre para tu cumpleaños.</li><li>Trabajo 100% Remoto</li><li>40 Hora de trabajo semanales</li></ul>",
+              "web": "https://promarketingchile.com/",
+              "twitter": "",
+              "github": "",
+              "facebook": "",
+              "angellist": "",
+              "country": "CL",
+              "response_time_in_days": {
+                "min": 3,
+                "max": 19
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/8516/Logo-promarketing.jpeg"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/creative-strategist-promarketing-remote"
+      }
+    },
+    {
+      "id": "ingeniero-full-stack-laravel-vue-poderjudicialvirtual-com-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Ingeniero Full-Stack Laravel/Vue",
+        "description_headline": "Lo que buscamos",
+        "description": "<p><strong>Requisitos:</strong></p><p>• 5 años o más de experiencia profesional con PHP, idealmente Laravel.</p><p>• Capacidad real de leer, entender y mantener código existente con años de historia, no solo arrancar proyectos desde cero.</p><p>• MySQL a escala: has trabajado con tablas de millones de registros y sabes de índices y paginación eficiente.</p><p>• Vue.js sólido para trabajo full-stack.</p><p>• Diseño y consumo de APIs REST que escalan.</p><p>• Ownership: tomas un producto y lo llevas a producción. Detectas tus errores antes de entregar.</p><p>• Git con flujo profesional: manejo de branches, pull requests y participación activa en code reviews.</p><p>• Entorno de desarrollo Linux: configuración autónoma de stack local en Ubuntu (Apache, PHP, MySQL) sin dependencia de soporte externo.</p><p><strong>Sobre el uso de IA</strong></p><p>Usamos IA todos los días y esperamos que tú también. La regla es simple: la IA amplifica tu criterio, no lo sustituye. Debes entender cada línea que mandas a producción. Durante el proceso vas a defender tu código en vivo, sin asistentes: explicar tus decisiones, encontrar errores en código ajeno y modificar comportamiento en tiempo real.</p><p><strong>Soft skills (competencias clave que valoramos):</strong></p><p>• Criterio técnico en revisión de código. Capacidad para identificar vulnerabilidades, cuellos de botella y errores de lógica, tanto en código propio como en el generado por IA.</p><p>• Ownership del resultado. Asumir plena re…",
+        "projects": "<p><strong>El proyecto</strong></p><p>El equipo construirá un producto nuevo completo: backend en Laravel, frontend en Vue, flujo de referidos e integración de pagos con Stripe, desde la spec hasta producción. Al lanzarlo, sigue el próximo producto del plan. Aquí no se mantiene lo de otros: se construye lo propio.</p><p><strong>Sobre nosotros</strong></p><p>PoderJudicialVirtual es una empresa legaltech mexicana con más de 10 años en el mercado. Operamos la plataforma de datos judiciales más grande de México: más de 65 millones de registros de todo el país, con despachos, empresas y miles de personas usando y pagando el servicio todos los días. Somos rentables y no dependemos de inversionistas para ejecutar nuestro plan.</p>",
+        "functions_headline": "",
+        "functions": "<p>Buscamos al ingeniero que se sumará al equipo que va a construir el próximo producto de PoderJudicialVirtual de punta a punta y llevarlo a producción. Es un rol de constructor dentro de un equipo de desarrollo: entre todos toman la especificación, diseñan el backend en Laravel, construyen el frontend en Vue, integran los pagos con Stripe y lo lanzan a miles de usuarios reales. Con ownership real de tu parte del producto, sin capas intermedias y sin nadie revisándote el hombro.</p><p>No es un asiento más en una fábrica de software. Estamos ejecutando nuestro plan 2030: pasar de 2 productos en producción a 11 y expandirnos a Sudamérica. Tú construyes el primero de esa nueva ola, y quien construye bien aquí se convierte en pieza central de todo lo que sigue. El crecimiento se gana construyendo, no por antigüedad.</p><p>Te integrarás a un equipo de desarrollo en México, de la mano de un líder técnico fuerte, dueño de la arquitectura y la infraestructura, y de un Product Manager Senior que te entrega specs claras con Definition of Ready y Definition of Done. Tú eres dueño del código: de que escale, de que cobre bien y de que llegue a producción sin sorpresas.</p><p>Vas a trabajar sobre un dominio complejo (la infraestructura judicial mexicana) que tarda meses en dominarse. No esperamos que llegues sabiéndolo. Sí esperamos que en pocos meses tomes decisiones técnicas independientes y que tu código hable por ti.</p>",
+        "benefits_headline": "Lo que ofrecemos",
+        "benefits": "<ul><li>100% remoto.</li><li>Sueldo entre $65,000 y $80,000 brutos, acordes a tu experiencia (posibiliad de modalidad contractor). </li><li>Bono por objetivos ligado a que tu producto llegue a producción y cobre.</li><li>Impacto directo: lo que construyes lo usan miles de abogados y empresas desde el día uno.</li><li>Un plan 2030 real, con productos definidos y financiamiento propio, del que tu trabajo es pieza central.</li></ul>",
+        "desirable_headline": "Deseable (suma puntos, no descarta):",
+        "desirable": "<p>• MongoDB, 2 años o más.</p><p>• Automatización web: experiencia con Playwright, Puppeteer y gestión de proxies.</p><p>• Cloud: familiaridad con servicios de AWS.</p><p>• Inglés de lectura técnica: entender documentación, errores y recursos de desarrollo en inglés. No se requiere hablarlo.</p><p>• Experiencia integrando pasarelas de pago; Stripe en particular.</p>",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "es",
+        "category_name": "Programming",
+        "perks": [
+          "remote_full",
+          "computer_provided"
+        ],
+        "min_salary": 2000,
+        "max_salary": 3000,
+        "published_at": 1792505334,
+        "response_time_in_days": {
+          "min": null,
+          "max": null
+        },
+        "applications_count": 242,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "1",
+            "type": "modality",
+            "attributes": {
+              "name": "Full time",
+              "locale_key": "full_time"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "4",
+            "type": "seniority",
+            "attributes": {
+              "name": "Senior",
+              "locale_key": "senior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "php",
+              "type": "tag",
+              "attributes": {
+                "name": "PHP",
+                "keywords": "PHP5, PHP 5.6, PHP 5, PHP7, PHP 7.4, PHP 7.x, PHP 7, PHP 8.2, PHP 8, PHP4, PHP Frameworks, PHP Framework, PHP CakePHP, PHP CodeIgniter, PHP Development, PHP Composer, PHP Laravel, PHP MVC Frameworks, PHPMVC, PHP MVC, PHP Yii Framework, PHP Profiling"
+              }
+            },
+            {
+              "id": "laravel",
+              "type": "tag",
+              "attributes": {
+                "name": "Laravel",
+                "keywords": "Laravel Framework, Laravel Backpack, Laravel Blade, Laravel Dusk, Laravel Forge, Laravel Mix, Laravel Nova, Laravel Passport, Laravel Queues, PHP Laravel"
+              }
+            },
+            {
+              "id": "vue-js",
+              "type": "tag",
+              "attributes": {
+                "name": "Vue.js",
+                "keywords": "vue, vuejs, nuxt, vue-i18n, vue-worker, vue-async-computed, Vue 2, Vue 3, Vue"
+              }
+            },
+            {
+              "id": "mysql",
+              "type": "tag",
+              "attributes": {
+                "name": "MySQL",
+                "keywords": "MySQL Server, MySQL 8, MySQL RDS, MySQL Heatwave, MySQL Tuning, MySQL Workbench, Mybatis"
+              }
+            },
+            {
+              "id": "git",
+              "type": "tag",
+              "attributes": {
+                "name": "Git",
+                "keywords": ""
+              }
+            },
+            {
+              "id": "linux",
+              "type": "tag",
+              "attributes": {
+                "name": "Linux",
+                "keywords": "Bash, Kernel, CentOS, Red Hat, RHCS, SuSE, Linux OS, Linux Scripting, Linux Shell Commands, Linux Shell Scripting, Linux Commands, Linux Debian"
+              }
+            },
+            {
+              "id": "rest-api-design",
+              "type": "tag",
+              "attributes": {
+                "name": "REST API Design",
+                "keywords": null
+              }
+            },
+            {
+              "id": "ubuntu",
+              "type": "tag",
+              "attributes": {
+                "name": "Ubuntu",
+                "keywords": "Ubuntu Bash, Ubuntu CLI, Ubuntu LTS, Ubuntu Server, Ubuntu Terminal"
+              }
+            },
+            {
+              "id": "code-review",
+              "type": "tag",
+              "attributes": {
+                "name": "Code Review",
+                "keywords": "Code Auditing, Code Audit Tools, Collaborative Coding, Code Inspection, Code Reading"
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "poderjudicialvirtual-com",
+            "type": "company",
+            "attributes": {
+              "name": "PoderJudicialVirtual.com",
+              "description": "PoderJudicialVirtual.com es una plataforma mexicana de legal tech con más de 5 años en el mercado. Despachos, áreas legales de empresas y personas la usan para dar seguimiento automático a sus expedientes judiciales y para buscar antecedentes legales.",
+              "long_description": "<p><strong>Qué hacemos</strong><br>Convertimos la información de los poderes judiciales de México en herramientas útiles. Nuestros dos productos en producción son las notificaciones automáticas de expedientes, usadas por despachos de todo el país, y la búsqueda de antecedentes legales para empresas y personas. Hoy estamos construyendo nuevos productos: un ERP para despachos, búsqueda de cédulas profesionales, alertas de nuevos expedientes, búsquedas de compliance y herramientas de inteligencia artificial para abogados.</p><p><strong>Cómo trabajamos</strong></p><ul><li><strong>100 % remoto</strong>, con horario definido y comunicación por escrito.</li><li><strong>Equipo de producto pequeño y senior.</strong> Cada desarrollador es dueño de lo que construye, de la especificación a producción.</li><li><strong>Proceso claro:</strong> tarjetas en Jira con criterios de aceptación, revisión de código por el Tech Lead y QA dedicado antes de cada salida.</li><li><strong>IA en el día a día.</strong> Usamos asistentes de código como Claude y Copilot, y valoramos el criterio por encima de escribir todo a mano.</li><li><strong>Problemas reales a escala:</strong> millones de registros, scraping de miles de juzgados, colas, rendimiento y SEO.</li></ul><p><strong>Stack</strong><br>Laravel, Vue 3, MySQL, MongoDB, Redis y Python para automatización.</p><p><strong>Lo que buscamos en las personas</strong><br>Que hagan las cosas bien a la primera, que entiendan el porqué del negocio y que avisen a…",
+              "projects": null,
+              "benefits": "<ul><li>100% remoto.</li><li>Sueldo entre $65,000 y $80,000 brutos, acordes a tu experiencia (posibiliad de modalidad contractor). </li><li>Bono por objetivos ligado a que tu producto llegue a producción y cobre.</li><li>Impacto directo: lo que construyes lo usan miles de abogados y empresas desde el día uno.</li><li>Un plan 2030 real, con productos definidos y financiamiento propio, del que tu trabajo es pieza central.</li></ul>",
+              "web": "https://www.poderjudicialvirtual.com",
+              "twitter": "",
+              "github": "",
+              "facebook": "Poder-Judicial-Virtual-723069814432813",
+              "angellist": "",
+              "country": "MX",
+              "response_time_in_days": {
+                "min": null,
+                "max": null
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/10229/icono.png"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/ingeniero-full-stack-laravel-vue-poderjudicialvirtual-com-remote"
+      }
+    },
+    {
+      "id": "creador-a-contenido-instagram-tiktok-planazos-remote",
+      "type": "job",
+      "attributes": {
+        "title": "Creador/a Contenido Instagram/TikTok",
+        "description_headline": "Requerimientos del cargo",
+        "description": "<p><strong>Requisitos</strong></p><ul><li><strong>Imprescindible:</strong> un móvil que grabe en buena calidad (imagen y audio).</li><li>Español fluido y soltura hablando a cámara.</li><li>Experiencia con el formato Hook, Body y CTA.</li><li>Constancia para mantener el ritmo diario.</li></ul>",
+        "projects": "<p><strong>Sobre Planazos</strong><br>Planazos es una app para descubrir y reservar planes de última hora en Madrid con descuento. Buscamos una creadora de contenido orgánico para TikTok e Instagram que nos ayude a conseguir descargas.</p><p><strong>Qué harás</strong></p><ul><li>Grabar y publicar <strong>5 vídeos al día</strong> en formato selfie, hablando a cámara sobre Planazos.</li><li>Subirlos a <strong>TikTok e Instagram Reels</strong>.</li><li>Usar en todos los vídeos la estructura <strong>Hook, Body y CTA</strong>, terminando siempre con una invitación a descargar la app.</li></ul>",
+        "functions_headline": "Funciones del cargo",
+        "functions": "<p><strong>Qué harás</strong></p><ul><li>Grabar y publicar <strong>5 vídeos al día</strong> en formato selfie, hablando a cámara sobre Planazos.</li><li>Subirlos a <strong>TikTok e Instagram Reels</strong>.</li><li>Usar en todos los vídeos la estructura <strong>Hook, Body y CTA</strong>, terminando siempre con una invitación a descargar la app.</li></ul>",
+        "benefits_headline": "Condiciones",
+        "benefits": "<p><strong>Qué ofrecemos</strong></p><ul><li>Proyecto continuo y 100 % remoto.</li><li>Pago mensual fijo: 150USD al mes (unos 150 vídeos).</li><li>Ideas y guiones de base, con libertad para aportar tu estilo.</li></ul>",
+        "desirable_headline": "Opcionales",
+        "desirable": "",
+        "remote": true,
+        "remote_modality": "fully_remote",
+        "remote_zone": null,
+        "countries": [
+          "Remote"
+        ],
+        "lang": "es",
+        "category_name": "Content, Advertising & Media",
+        "perks": [
+          "remote_full"
+        ],
+        "min_salary": null,
+        "max_salary": null,
+        "published_at": 1792487060,
+        "response_time_in_days": {
+          "min": 1,
+          "max": 1
+        },
+        "applications_count": 28,
+        "location_regions": {
+          "data": []
+        },
+        "location_tenants": {
+          "data": []
+        },
+        "location_cities": {
+          "data": []
+        },
+        "modality": {
+          "data": {
+            "id": "3",
+            "type": "modality",
+            "attributes": {
+              "name": "Freelance",
+              "locale_key": "freelance"
+            }
+          }
+        },
+        "seniority": {
+          "data": {
+            "id": "2",
+            "type": "seniority",
+            "attributes": {
+              "name": "Junior",
+              "locale_key": "junior"
+            }
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "tiktok",
+              "type": "tag",
+              "attributes": {
+                "name": "TikTok",
+                "keywords": "TikTok Business, TikTok for Business, TikTok Content"
+              }
+            },
+            {
+              "id": "short-form-video",
+              "type": "tag",
+              "attributes": {
+                "name": "Short-Form Video",
+                "keywords": null
+              }
+            },
+            {
+              "id": "video-production",
+              "type": "tag",
+              "attributes": {
+                "name": "Video Production",
+                "keywords": null
+              }
+            },
+            {
+              "id": "content-creation",
+              "type": "tag",
+              "attributes": {
+                "name": "Content creation",
+                "keywords": "creación de contenido, content creator, creador de contenido, creadora de contenido, content manager, Content Writing"
+              }
+            },
+            {
+              "id": "spanish",
+              "type": "tag",
+              "attributes": {
+                "name": "Spanish",
+                "keywords": "Spanish (B2-C1), Spanish Language, Spanish Communication, Spanish Fluency"
+              }
+            }
+          ]
+        },
+        "company": {
+          "data": {
+            "id": "planazos-es",
+            "type": "company",
+            "attributes": {
+              "name": "Planazos",
+              "description": "Planazos es una app para descubrir y reservar planes de última hora en Madrid con descuento. Buscamos una creadora de contenido orgánico para TikTok e Instagram que nos ayude a conseguir descargas.",
+              "long_description": "",
+              "projects": null,
+              "benefits": "<p><strong>Qué ofrecemos</strong></p><ul><li>Proyecto continuo y 100 % remoto.</li><li>Pago mensual fijo: 150USD al mes (unos 150 vídeos).</li><li>Ideas y guiones de base, con libertad para aportar tu estilo.</li></ul>",
+              "web": "https://planazos.net/",
+              "twitter": null,
+              "github": null,
+              "facebook": null,
+              "angellist": null,
+              "country": "ES",
+              "response_time_in_days": {
+                "min": 1,
+                "max": 1
+              },
+              "logo": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/20843/ic_launcher.png"
+            }
+          }
+        }
+      },
+      "links": {
+        "public_url": "https://www.getonbrd.com/jobs/creador-a-contenido-instagram-tiktok-planazos-remote"
+      }
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "per_page": 120,
+    "total_pages": 2
+  }
+}

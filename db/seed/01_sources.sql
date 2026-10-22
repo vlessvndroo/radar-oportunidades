@@ -19,7 +19,12 @@ INSERT INTO sources (id, name, type, url, enabled, opportunity_type, terms_url, 
    'https://weworkremotely.com/remote-jobs.rss',
    true, 'job',
    'https://weworkremotely.com/remote-job-rss-feed',
-   'Feed general (una consulta por ejecución); uso libre con atribución.')
+   'Feed general (una consulta por ejecución); uso libre con atribución.'),
+  ('getonboard', 'Get on Board', 'api',
+   'https://www.getonbrd.com/api/v0/search/jobs?remote=true&per_page=120&lang=en&expand%5B%5D=company&expand%5B%5D=tags&expand%5B%5D=seniority&expand%5B%5D=modality',
+   true, 'job',
+   'https://www.getonbrd.com/api-doc.html',
+   'API pública abierta y sin autenticación; bolsa de Latinoamérica. Salarios mensuales en USD. Una página de 120 ofertas 100 % remotas por ejecución.')
 ON CONFLICT (id) DO UPDATE SET
   name             = EXCLUDED.name,
   type             = EXCLUDED.type,

@@ -65,18 +65,29 @@ function trimDescription(text) {
     : text;
 }
 
+// Recorta todos los textos largos, a cualquier profundidad (Get on Board
+// anida la descripción en "attributes" y la empresa expandida).
+function trimDeep(value) {
+  if (typeof value === 'string') return trimDescription(value);
+  if (Array.isArray(value)) return value.map(trimDeep);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, trimDeep(v)]));
+  }
+  return value;
+}
+
 // Conserva la forma original: un arreglo (con el aviso legal de Remote OK al
-// inicio) o un objeto con la lista en "jobs" (Remotive).
+// inicio) o un objeto con la lista en "jobs" (Remotive) o "data" (Get on Board).
 function sampleJson(body) {
   const data = JSON.parse(body);
   if (Array.isArray(data)) {
     const [head, ...rest] = data;
     const items = 'legal' in head ? rest : data;
-    const sample = items.slice(0, SAMPLE_SIZE).map((job) => ({ ...job, description: trimDescription(job.description) }));
+    const sample = items.slice(0, SAMPLE_SIZE).map(trimDeep);
     return `${JSON.stringify('legal' in head ? [head, ...sample] : sample, null, 2)}\n`;
   }
   const key = Object.keys(data).find((k) => Array.isArray(data[k]));
-  const sample = data[key].slice(0, SAMPLE_SIZE).map((job) => ({ ...job, description: trimDescription(job.description) }));
+  const sample = data[key].slice(0, SAMPLE_SIZE).map(trimDeep);
   return `${JSON.stringify({ ...data, [key]: sample }, null, 2)}\n`;
 }
 
