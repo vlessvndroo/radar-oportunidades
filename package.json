@@ -17,6 +17,7 @@
     "db:backup": "node scripts/backup.mjs",
     "db:restore": "node scripts/restore.mjs",
     "fixtures": "node scripts/fetch-fixtures.mjs",
+    "evaluate": "node scripts/evaluate-local.mjs",
     "workflows:export": "node scripts/export-workflows.mjs",
     "workflows:import": "node scripts/import-workflows.mjs"
   }
