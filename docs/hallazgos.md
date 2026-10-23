@@ -2,6 +2,13 @@
 
 Mediciones con datos reales que condicionan las fases siguientes. Cada entrada indica la fecha y qué fase la usa.
 
+## 2026-10-22 — Primera ejecución completa con evaluación (cierre de la fase 2)
+
+- Ejecución 5: 27 ofertas nuevas desde la noche anterior, las 27 evaluadas en la misma ejecución (25 pasan, 2 descartadas), `status = success`.
+- Las nuevas mostraron dos casos más:
+  - **Roles no técnicos con "automation" en el título** ("Marketing Automation Manager", "Sales Development Representative – … Automation"). Resuelto con la regla "rol no técnico" (−40). El acierto frente a la revisión manual se mantiene en 88%.
+  - **Restricción de país escrita en el título** ("Software Development Engineer II (Remote @ Colombia)", "… – Canada, Spain, India"), mientras la ubicación de WWR dice "Anywhere". Pendiente: el filtro de ubicación solo mira el campo de ubicación. Hace falta juntar más casos antes de leer países en el título, para no descartar ofertas por error.
+
 ## 2026-10-22 — Validación manual de la puntuación (fase 2)
 
 Alessandro revisó 26 ofertas reales (15 mejores, 7 del medio, 3 descartadas y la de automatización con pago bajo) y las marcó sí / sí pero depende del stack / quizás / no.

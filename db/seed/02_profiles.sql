@@ -51,8 +51,14 @@ VALUES (
       ]}},
       {"id": "fullstack", "label": "rol full-stack", "weight": 30, "match": {"keywords": [
         {"fields": ["title"], "any": ["full stack", "full-stack", "fullstack", "software engineer",
+          "software development engineer", "sde",
           "software developer", "web developer", "backend", "back-end", "back end", "frontend", "front-end",
           "desarrollador", "programador"]}
+      ]}},
+      {"id": "non_dev_role", "label": "rol no técnico", "weight": -40, "match": {"keywords": [
+        {"fields": ["title"], "any": ["sales", "marketing", "representative", "sdr", "bdr", "account executive",
+          "account manager", "recruiter", "talent", "customer success", "customer support", "liaison",
+          "copywriter", "content", "ventas", "vendedor", "reclutador"]}
       ]}},
       {"id": "dev_role", "label": "rol de desarrollo", "weight": 15, "match": {"keywords": [
         {"fields": ["title"], "any": ["developer", "engineer", "programmer", "desarrollador", "desarrolladora",
@@ -65,7 +71,7 @@ VALUES (
       ]}},
       {"id": "foreign_stack", "label": "stack ajeno en el título", "weight": -15, "per_match": true, "max": -30, "match": {"keywords": [
         {"fields": ["title"], "any": ["angular", "ionic", "java", "php", "laravel", "ruby", "rails",
-          "solidity", "rust", "golang", "kotlin", "swift", "flutter", "salesforce", "sap", "dynamics 365"]}
+          "solidity", "rust", "golang", "go", "kotlin", "swift", "flutter", "salesforce", "sap", "dynamics 365"]}
       ]}},
       {"id": "ai", "label": "IA/LLM", "weight": 15, "requires_any": ["automation", "fullstack", "dev_role"], "match": {"keywords": [
         {"fields": ["title", "tags", "description"], "any": ["llm", "llms", "openai", "anthropic", "claude",

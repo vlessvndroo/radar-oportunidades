@@ -2,7 +2,7 @@
 
 Motor en [n8n](https://n8n.io) que cada mañana recolecta ofertas de empleo remoto de fuentes públicas, las filtra y puntúa contra un perfil, y envía por Telegram un resumen con las 3 a 5 mejores. Sin scraping, sin postulación automática y con costo cero.
 
-> Estado: **fase 1 (recolectar)** terminada: 4 fuentes, ~318 ofertas únicas por ejecución. Ver el [plan por fases](docs/SPEC.md#plan-por-fases).
+> Estado: **fase 2 (puntuar)** terminada: 4 fuentes, filtros duros y puntuación por reglas validada con revisión manual (88% de acierto). Ver el [plan por fases](docs/SPEC.md#plan-por-fases).
 
 ## Requisitos
 
