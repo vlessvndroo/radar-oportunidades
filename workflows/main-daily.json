@@ -130,13 +130,13 @@
         "operation": "executeQuery",
         "query": "SELECT id, status, stats FROM finish_run($1::bigint, $2::jsonb);",
         "options": {
-          "queryReplacement": "={{ [ $('Preparar lote').first().json.run_id, JSON.stringify({ sources: $('Preparar lote').first().json.sources, new: $json.new, existing: $json.existing }) ] }}"
+          "queryReplacement": "={{ [ $('Preparar lote').first().json.run_id, JSON.stringify({ sources: $('Preparar lote').first().json.sources, new: $('Guardar ofertas').first().json.new, existing: $('Guardar ofertas').first().json.existing, evaluation: $json }) ] }}"
         }
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.7,
       "position": [
-        1344,
+        1568,
         0
       ],
       "id": "2bbdcc57-bec1-4854-aea7-0cc2dfa8e15a",
@@ -147,6 +147,35 @@
           "name": "Radar DB"
         }
       }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "biCc5RAuqF1xo6c2",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/biCc5RAuqF1xo6c2",
+          "cachedResultName": "evaluate"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.4,
+      "position": [
+        1344,
+        0
+      ],
+      "id": "6018016c-c5fe-4446-b173-58bd004f0a3b",
+      "name": "Evaluar ofertas",
+      "onError": "continueRegularOutput"
     }
   ],
   "connections": {
@@ -209,6 +238,17 @@
       "main": [
         [
           {
+            "node": "Evaluar ofertas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluar ofertas": {
+      "main": [
+        [
+          {
             "node": "Cerrar run",
             "type": "main",
             "index": 0
@@ -226,7 +266,7 @@
     "templateCredsSetupCompleted": true
   },
   "nodeGroups": [],
-  "versionId": "989c9fa5-5f44-429c-97a5-10ebbc199723",
+  "versionId": "1ba9ca59-6a66-4d4a-ae58-cbd70a599dc3",
   "activeVersionId": null,
   "sourceWorkflowId": null,
   "tags": [],
