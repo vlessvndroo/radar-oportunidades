@@ -26,7 +26,8 @@ VALUES (
       "unknown": "pass_flagged"
     },
     "contract_types": { "allow": ["full_time", "part_time", "contract"] },
-    "min_hourly_usd": 10,
+    "min_hourly_usd": 8,
+    "low_pay": "flag",
     "unknown_salary": "pass_flagged",
     "languages": ["es", "en"]
   }
@@ -73,7 +74,8 @@ VALUES (
       {"id": "senior", "label": "senior/lead o 5+ años", "weight": -25, "match": {
         "keywords": [{"fields": ["title"], "any": ["senior", "sr", "tech lead", "technical lead", "team lead",
           "lead engineer", "lead developer", "engineering lead", "design lead", "product lead", "staff",
-          "principal", "head of", "architect", "director"]}],
+          "principal", "head of", "architect", "director"],
+          "except": ["semi senior", "semi-senior", "semisenior", "semi sr"]}],
         "raw": {"seniority": ["senior", "expert"]},
         "min_years": 5
       }}
