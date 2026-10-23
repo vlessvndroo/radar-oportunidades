@@ -2,6 +2,24 @@
 
 Mediciones con datos reales que condicionan las fases siguientes. Cada entrada indica la fecha y qué fase la usa.
 
+## 2026-10-22 — Validación manual de la puntuación (fase 2)
+
+Alessandro revisó 26 ofertas reales (15 mejores, 7 del medio, 3 descartadas y la de automatización con pago bajo) y las marcó sí / sí pero depende del stack / quizás / no.
+
+**Su criterio, en orden de importancia:**
+1. ¿Es un rol de desarrollo? Ventas, enablement y diseño son "no" sin importar lo demás.
+2. ¿Cuánto se parece el stack al suyo? Casi todo lo de desarrollo es "sí, depende del stack". No conocer el framework principal (Ionic/Angular) lo convierte en "no".
+3. El nivel senior resta, pero no descalifica. El pago bajo tampoco: lo quiere ver con el monto y decidir.
+
+**Cambios que salieron de la revisión:** pago bajo como aviso con el monto (mínimo de referencia 8 USD/h); "Semi Senior" ya no cuenta como senior; nueva señal "rol de desarrollo" (+15); el stack suma +8 por tecnología hasta +24; stack ajeno en el título resta −15 por tecnología hasta −30 (.NET no, porque sabe C#); senior baja de −25 a −15; junior, pago, IA, recencia y herramientas solo suman en roles de desarrollo o automatización.
+
+| Medida | Antes | Después |
+|---|---|---|
+| Pares ordenados como él | 83% | 88% |
+| Puntaje promedio de sus "sí" | 78 | 89 |
+| Puntaje promedio de sus "no" | 17 | 10 |
+| Ofertas marcadas "no" en el top 10 del radar | 1 | 0 |
+
 ## 2026-10-22 — Aceptación de la fase 1 (main-daily en n8n)
 
 | Ejecución | Estado | Nuevas | Existentes | Nota |

@@ -45,7 +45,7 @@ VALUES (
           "integrations", "integraciones", "workflow", "workflows", "rpa", "no-code", "low-code", "n8n",
           "zapier", "make.com", "integromat", "workato", "ipaas", "api integration"]}
       ]}},
-      {"id": "automation_tools", "label": "menciona n8n/Zapier/Make", "weight": 10, "match": {"keywords": [
+      {"id": "automation_tools", "label": "menciona n8n/Zapier/Make", "weight": 10, "requires_any": ["automation", "fullstack", "dev_role"], "match": {"keywords": [
         {"fields": ["tags", "description"], "any": ["n8n", "zapier", "make.com", "integromat", "workato",
           "power automate"]}
       ]}},
@@ -54,24 +54,33 @@ VALUES (
           "software developer", "web developer", "backend", "back-end", "back end", "frontend", "front-end",
           "desarrollador", "programador"]}
       ]}},
-      {"id": "stack", "label": "stack coincidente", "weight": 20, "match": {"keywords": [
-        {"fields": ["title", "tags", "description"], "any": ["typescript", "javascript", "node.js", "nodejs",
-          "node", "nestjs", "react", "python", "flask", "postgresql", "postgres", "sql", "supabase", "docker",
-          "tailwind"]}
+      {"id": "dev_role", "label": "rol de desarrollo", "weight": 15, "match": {"keywords": [
+        {"fields": ["title"], "any": ["developer", "engineer", "programmer", "desarrollador", "desarrolladora",
+          "ingeniero", "ingeniera", "programador", "programadora", "dev", "architect", "arquitecto"]}
       ]}},
-      {"id": "ai", "label": "IA/LLM", "weight": 15, "match": {"keywords": [
+      {"id": "stack", "label": "stack coincidente", "weight": 8, "requires_any": ["automation", "fullstack", "dev_role"], "per_match": true, "max": 24, "match": {"keywords": [
+        {"fields": ["title", "tags", "description"], "any": ["typescript", "javascript",
+          ["node.js", "nodejs", "node"], "nestjs", "react", "python", "flask", ["postgresql", "postgres"],
+          "sql", "supabase", "docker", "tailwind"]}
+      ]}},
+      {"id": "foreign_stack", "label": "stack ajeno en el título", "weight": -15, "per_match": true, "max": -30, "match": {"keywords": [
+        {"fields": ["title"], "any": ["angular", "ionic", "java", "php", "laravel", "ruby", "rails",
+          "solidity", "rust", "golang", "kotlin", "swift", "flutter", "salesforce", "sap", "dynamics 365"]}
+      ]}},
+      {"id": "ai", "label": "IA/LLM", "weight": 15, "requires_any": ["automation", "fullstack", "dev_role"], "match": {"keywords": [
         {"fields": ["title", "tags", "description"], "any": ["llm", "llms", "openai", "anthropic", "claude",
           "gemini", "chatgpt", "gpt", "ai agent", "ai agents", "generative ai", "genai", "prompt engineering",
           "machine learning", "rag", "langchain", "inteligencia artificial"]}
       ]}},
-      {"id": "junior", "label": "nivel junior/semi-senior", "weight": 15, "match": {
-        "keywords": [{"fields": ["title"], "any": ["junior", "jr", "trainee", "entry level", "semi senior",
-          "semi-senior", "ssr", "mid level", "mid-level", "intermediate"]}],
+      {"id": "junior", "label": "nivel junior/semi-senior", "weight": 15, "requires_any": ["automation", "fullstack", "dev_role"], "match": {
+        "keywords": [{"fields": ["title"], "any": ["junior", "jr", "trainee", "entry level", "entry-level",
+          "fresh graduate", "graduate", "recien egresado", "semi senior", "semi-senior", "semisenior", "ssr",
+          "mid level", "mid-level", "intermediate"]}],
         "raw": {"seniority": ["no_experience", "junior", "semi_senior"]}
       }},
-      {"id": "pay", "label": "pago ≥ 12 USD/h", "weight": 10, "match": {"min_hourly_usd": 12}},
-      {"id": "recent", "label": "publicada hace ≤ 3 días", "weight": 10, "match": {"max_age_days": 3}},
-      {"id": "senior", "label": "senior/lead o 5+ años", "weight": -25, "match": {
+      {"id": "pay", "label": "pago ≥ 12 USD/h", "weight": 10, "requires_any": ["automation", "fullstack", "dev_role"], "match": {"min_hourly_usd": 12}},
+      {"id": "recent", "label": "publicada hace ≤ 3 días", "weight": 10, "requires_any": ["automation", "fullstack", "dev_role"], "match": {"max_age_days": 3}},
+      {"id": "senior", "label": "senior/lead o 5+ años", "weight": -15, "match": {
         "keywords": [{"fields": ["title"], "any": ["senior", "sr", "tech lead", "technical lead", "team lead",
           "lead engineer", "lead developer", "engineering lead", "design lead", "product lead", "staff",
           "principal", "head of", "architect", "director"],
