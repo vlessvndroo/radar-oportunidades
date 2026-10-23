@@ -47,3 +47,7 @@ FROM (VALUES
   ('getonboard', 'zB0hs2T2FDtc84WG')
 ) AS c (source_id, workflow_id)
 WHERE s.id = c.source_id;
+
+-- Pista de región (migración 004): en Get on Board, bolsa de Latinoamérica,
+-- "Remote" significa abierto a LATAM.
+UPDATE sources SET region_hint = 'latam' WHERE id = 'getonboard';
